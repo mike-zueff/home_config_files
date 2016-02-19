@@ -1,0 +1,33 @@
+URxvt*background: black
+URxvt*boldFont: xft:Hack-12:bold
+URxvt*boldItalicFont: xft:Hack-12:bold:italic
+URxvt*borderColor: web purple
+URxvt*color12: dark orchid
+URxvt*color4: dark orchid
+URxvt*externalBorder: 0
+URxvt*font: xft:Hack-12
+URxvt*foreground: white
+URxvt*iconFile: /usr/share/icons/Tango/scalable/apps/utilities-terminal.svg
+URxvt*internalBorder: 1
+URxvt*italicFont: xft:Hack-12:italic
+URxvt*saveLines: 100000
+URxvt*scrollBar: false
+Xcursor.size: 24
+Xcursor.theme: Vanilla-DMZ
+Xft.antialias: true
+Xft.autohint: false
+Xft.hinting: false
+Xft.hintstyle: hintnone
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+xscreensaver*Dialog.background: #8600b3
+xscreensaver*Dialog.borderWidth: 0
+xscreensaver*captureStderr: False
+xscreensaver*dateFormat:
+xscreensaver*passwd.body.label:
+xscreensaver*passwd.heading.label: screensaver for x11
+xscreensaver*passwd.thermometer.foreground: #ff0000
+xscreensaver*passwd.thermometer.width: 16
+xscreensaver*passwd.uname: False
+xscreensaver*passwd.unlock.label: >>>
+xscreensaver*passwd.user.label: Locked by:

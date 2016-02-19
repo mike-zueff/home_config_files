@@ -1,0 +1,14 @@
+xrdb -merge /etc/X11/Xresources
+xrdb -merge ${HOME}/.Xresources
+
+nitrogen --restore
+
+numlockx on
+
+compton --config /dev/null --backend glx --focus-exclude "class_g != 'URxvt'" --glx-no-stencil --paint-on-overlay --xinerama-shadow-crop -Cbcfz -i 0.8
+nm-applet &
+pasystray &
+urxvtd --fork --opendisplay --quiet
+xkbcomp ${DISPLAY} - | grep -v "group [2-4] = AltGr;" | xkbcomp - ${DISPLAY}
+xmodmap -e 'add mod3 = Scroll_Lock'
+xscreensaver -no-splash &
