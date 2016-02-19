@@ -17,6 +17,8 @@ fi
 
 # Put your fun stuff here.
 
+PATH=${PATH}:/usr/sbin
+
 cd /tmp
 
 for FILE in `ls ~/.config/rc_files`

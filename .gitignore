@@ -4,6 +4,8 @@
 .bash_history
 .bash_logout
 .bash_profile
+.config/pavucontrol.ini
+.config/rc_files/mediawiki_credentials.sh
 .dbus/session-bus/*-0
 .dmrc
 .gksu.lock
