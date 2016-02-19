@@ -2,8 +2,13 @@
 .Xauthority
 .awesome-errors
 .bash_history
+.cache
+.config/GIMP
 .config/Skype
+.config/Trolltech.conf
 .config/dconf
+.config/freshwrapper-data
+.config/gconf
 .config/gtk-2.0
 .config/htop
 .config/libreoffice
@@ -19,6 +24,7 @@
 .gnupg
 .kde4
 .lesshst
+.local
 .maildir
 .mozilla
 .nv
@@ -31,3 +37,6 @@
 .xsession-errors
 .xsession-errors.old
 Downloads
+datebook
+dump
+wallpapers
