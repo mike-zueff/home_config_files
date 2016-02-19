@@ -2,9 +2,8 @@
 .Xauthority
 .awesome-errors
 .bash_history
-.bash_logout
-.bash_profile
 .config/Skype
+.config/dconf
 .config/gtk-2.0
 .config/htop
 .config/libreoffice
@@ -17,6 +16,7 @@
 .dbus
 .dmrc
 .gksu.lock
+.gnupg
 .kde4
 .lesshst
 .maildir
