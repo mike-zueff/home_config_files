@@ -10,10 +10,10 @@ function _rc_mediawiki_back_up
   then
     mkdir ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
     . ~/.config/rc_files/mediawiki_credentials.sh
-    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user --xml amalgam | gzip --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.xml.gz
-    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user amalgam | gzip --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.sql.gz
-    php /var/www/localhost/htdocs/mediawiki/maintenance/dumpBackup.php --full --include-files --logs --uploads | gzip --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_dump.xml.gz
-    sudo tar --create --directory /var/www/localhost/htdocs mediawiki | gzip --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_srv.tar.gz
+    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user --xml amalgam | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.xml.xz
+    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user amalgam | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.sql.xz
+    php /var/www/localhost/htdocs/mediawiki/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_dump.xml.xz
+    sudo tar --create --directory /var/www/localhost/htdocs mediawiki | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_srv.tar.xz
 
     [[ `ls ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} | wc --lines` -gt 20 ]] && find ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} -maxdepth 1 -mindepth 1 -mtime +100 -exec rm --force --recursive "{}" \+
 

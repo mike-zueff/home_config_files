@@ -20,6 +20,7 @@
 .config/pavucontrol.ini
 .config/pulse
 .config/rc_files/mediawiki_credentials.sh
+.config/wireshark
 .dbus
 .dmrc
 .gksu.lock
