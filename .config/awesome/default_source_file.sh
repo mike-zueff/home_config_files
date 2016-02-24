@@ -1,0 +1,2 @@
+. ~/.bashrc
+set -m

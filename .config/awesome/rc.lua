@@ -90,14 +90,18 @@ end
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+   { "restart", awesome.restart }
+}
+
+mysoundmenu = {
+    { "speakers", function ()
+        awful.util.spawn_with_shell("bash -i " .. awful.util.getdir("config") .. "/menu_item_sound_defaults.sh")
+    end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "sound", mysoundmenu, "/usr/share/icons/Tango/scalable/devices/audio-card.svg" },
+                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "/menu_item_datebook.sh" }
                                   }
                         })
 
@@ -294,6 +298,9 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
+            if client.focus then
+                client.focus:raise()
+            end
         end)
 )
 
