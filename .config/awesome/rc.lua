@@ -83,7 +83,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ " li", " de", " ex" }, s, layouts[6])
+    tags[s] = awful.tag({ " !", " @", " #" }, s, layouts[6])
 end
 -- }}}
 
@@ -93,9 +93,6 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-
---   { "SOUND - RESTORE", awful.util.spawn_with_shell("touch /tmp/111_2") },
-
    { "quit", awesome.quit }
 }
 

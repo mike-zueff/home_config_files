@@ -9,9 +9,11 @@
 .config/Trolltech.conf
 .config/calibre
 .config/dconf
+.config/eog
 .config/freshwrapper-data
 .config/gconf
 .config/gtk-2.0
+.config/gtk-3.0/bookmarks
 .config/htop
 .config/libreoffice
 .config/mc
@@ -25,11 +27,13 @@
 .dmrc
 .gksu.lock
 .gnupg
+.goldendict
 .kde4
 .lesshst
 .local
 .maildir
 .mozilla
+.mplayer
 .nv
 .nvidia-settings-rc
 .thumbnails
@@ -42,4 +46,5 @@
 Calibre Library
 Downloads
 dump
+lingvo
 wallpapers
