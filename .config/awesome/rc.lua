@@ -94,14 +94,18 @@ myawesomemenu = {
 }
 
 mysoundmenu = {
-    { "speakers", function ()
-        awful.util.spawn_with_shell("bash -i " .. awful.util.getdir("config") .. "/menu_item_sound_defaults.sh")
-    end }
+    { "cans, 1/2", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 50") end },
+    { "cans, 1/3", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 33") end },
+    { "cans, 1/4", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 25") end },
+    { "cans, 1/5", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 20") end },
+    { "cans, 1/6", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 17") end },
+    { "cans, 1/7", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 14") end },
+    { "defaults", function () awful.util.spawn_with_shell("bash -i " .. awful.util.getdir("config") .. "/menu_sound_defaults.sh") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "sound", mysoundmenu, "/usr/share/icons/Tango/scalable/devices/audio-card.svg" },
-                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "/menu_item_datebook.sh" }
+                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "/menu_datebook.sh" }
                                   }
                         })
 
@@ -298,9 +302,7 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
-            if client.focus then
-                client.focus:raise()
-            end
+            if client.focus then client.focus:raise() end
         end)
 )
 
