@@ -12,6 +12,4 @@ xkbcomp ${DISPLAY} - | grep -v "group [2-4] = AltGr;" | xkbcomp - ${DISPLAY}
 xmodmap -e 'add mod3 = Scroll_Lock'
 xscreensaver -no-splash &
 
-goldendict &
-nm-applet &
-pasystray &
+dex --autostart
