@@ -282,7 +282,17 @@ globalkeys = awful.util.table.join(
     --]]
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
-    awful.key({ modkey }, "KP_Enter", function() awful.util.spawn_with_shell("xscreensaver-command -lock") end)
+    awful.key({ modkey }, "KP_Add", function()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = false end
+    end),
+    awful.key({ modkey }, "KP_Enter", function() awful.util.spawn_with_shell("xscreensaver-command -lock") end),
+    awful.key({ modkey }, "KP_Subtract", function()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = true end
+    end)
 )
 
 clientkeys = awful.util.table.join(
