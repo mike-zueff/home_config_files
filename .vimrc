@@ -8,6 +8,7 @@ endif
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
@@ -43,11 +44,13 @@ colorscheme slate
 highlight ColorColumn cterm=bold ctermbg=209 ctermfg=0
 highlight CursorColumn cterm=bold ctermbg=239 ctermfg=15
 highlight CursorLine cterm=bold ctermbg=239 ctermfg=15
+highlight SignColumn ctermbg=236
 
 let g:NERDTreeCaseSensitiveSort=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
+let g:gitgutter_override_sign_column_highlight=0
 let g:tagbar_autoclose=1
 let g:tagbar_autofocus=1
 let g:tagbar_compact=1
@@ -74,19 +77,18 @@ set shiftwidth=2
 set showcmd
 set smarttab
 set tabstop=2
+set updatetime=1000
 set wildmenu
 """""""""""""""""""""""""""""
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'mileszs/ack.vim'
-"Plugin 'scrooloose/nerdtree'
 ""Plugin 'geetarista/ego.vim'
 ""Plugin 'jimenezrick/vimerl.git'
 "Plugin 'scrooloose/nerdcommenter'
 ""Plugin 'tpope/vim-unimpaired'
 ""Plugin 'godlygeek/tabular'
 ""Plugin 'tpope/vim-surround'
-"Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'FuzzyFinder'
 "Plugin 'xoria256.vim'
@@ -154,31 +156,6 @@ set wildmenu
 "  set autoindent		" always set autoindenting on
 "
 "endif " has("autocmd")
-"
-""Cscope
-"if has ("cscope")
-"    set csprg=/usr/bin/cscope
-"    set csto=0
-"    set cst
-"    set nocsverb
-"    if filereadable("cscope.out")
-"        cs add cscope.out
-"    elseif $CSCOPEDB != ""
-"        cs add $CSCOPE_DB
-"    endif
-"    set csverb
-"endif
-"
-""Cscope bindings
-"nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-"nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-"nmap <C-_>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-"nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-"
 "
 "" Convenient command to see the difference between the current buffer and the
 "" file it was loaded from, thus the changes you made.
