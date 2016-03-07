@@ -4,6 +4,7 @@
 .awesome-errors
 .bash_history
 .cache
+.cgdb
 .config/GIMP
 .config/Skype
 .config/Trolltech.conf
@@ -36,9 +37,11 @@
 .mplayer
 .nv
 .nvidia-settings-rc
+.tgdb
 .thumbnails
 .thunderbird
 .vim/.netrwhist
+.vim/bundle
 .viminfo
 .xscreensaver
 .xsession-errors
