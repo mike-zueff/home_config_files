@@ -1,17 +1,22 @@
-if !isdirectory($HOME . "/.vim/bundle")
-  !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-endif
-
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+if !isdirectory(expand("~/.vim/bundle"))
+  let g:bundle_installation_is_required=1
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+endif
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
+if exists("g:bundle_installation_is_required")
+  :PluginUpdate
+  :qall
+endif
 
 function! ToggleColorColumnValue()
   if &l:colorcolumn
@@ -37,6 +42,8 @@ highlight ColorColumn cterm=bold ctermbg=209 ctermfg=0
 highlight CursorColumn cterm=bold ctermbg=239 ctermfg=15
 highlight CursorLine cterm=bold ctermbg=239 ctermfg=15
 
+let g:airline_powerline_fonts=1
+
 nnoremap <silent> <F2> :call ToggleColorColumnValue()<CR>
 nnoremap <silent> <F3> :call ToggleCursorAccentuation()<CR>
 nnoremap <silent> <F4> :tab split<CR>:tabmove<CR>
@@ -59,8 +66,6 @@ set smarttab
 set tabstop=2
 set wildmenu
 """""""""""""""""""""""""""""
-"Plugin 'gmarik/Vundle.vim'
-""Plugin 'tpope/vim-fugitive'
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'mileszs/ack.vim'
@@ -73,7 +78,6 @@ set wildmenu
 ""Plugin 'tpope/vim-surround'
 "Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'L9'
 "Plugin 'FuzzyFinder'
 "Plugin 'xoria256.vim'
 "Plugin 'guicolorscheme.vim'
@@ -82,10 +86,8 @@ set wildmenu
 ""Plugin 'Gundo'
 ""Plugin 'SuperTab'
 ""Plugin 'ZoomWin'
-"" This bundle for working with columns of numbers and dates. I don't need it.
-"" Bundle 'VisIncr'
-"" Bundle 'viewdoc'
-"" Bundle 'Command-T'
+" Bundle 'VisIncr'
+" Bundle 'viewdoc'
 "
 "set clipboard=unnamedplus
 "set showtabline=2
@@ -326,3 +328,4 @@ set wildmenu
 "create undodir
 ""vim list buffers
 "vim move buffer to tab or window
+"set list
