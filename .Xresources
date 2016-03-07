@@ -22,12 +22,12 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 xscreensaver*Dialog.background: #8600b3
 xscreensaver*Dialog.borderWidth: 0
-xscreensaver*captureStderr: False
+xscreensaver*captureStderr: false
 xscreensaver*dateFormat:
 xscreensaver*passwd.body.label:
 xscreensaver*passwd.heading.label: screensaver for x11
 xscreensaver*passwd.thermometer.foreground: #ff0000
 xscreensaver*passwd.thermometer.width: 16
-xscreensaver*passwd.uname: False
+xscreensaver*passwd.uname: false
 xscreensaver*passwd.unlock.label: >>>
 xscreensaver*passwd.user.label: Locked by:
