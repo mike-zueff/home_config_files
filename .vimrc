@@ -8,6 +8,8 @@ endif
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 
@@ -42,12 +44,20 @@ highlight ColorColumn cterm=bold ctermbg=209 ctermfg=0
 highlight CursorColumn cterm=bold ctermbg=239 ctermfg=15
 highlight CursorLine cterm=bold ctermbg=239 ctermfg=15
 
+let g:NERDTreeCaseSensitiveSort=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
+let g:tagbar_autoclose=1
+let g:tagbar_autofocus=1
+let g:tagbar_compact=1
 
 nnoremap <silent> <F2> :call ToggleColorColumnValue()<CR>
 nnoremap <silent> <F3> :call ToggleCursorAccentuation()<CR>
-nnoremap <silent> <F4> :tab split<CR>:tabmove<CR>
-nnoremap <F5> :$tabnew<CR>
+nnoremap <silent> <F4> :NERDTreeToggle<CR>
+nnoremap <silent> <F5> :TagbarToggle<CR>
+nnoremap <silent> <F6> :tab split<CR>:tabmove<CR>
+nnoremap <F7> :$tabnew<CR>
 nnoremap <F11> :cNext<CR>
 nnoremap <F12> :cnext<CR>
 
