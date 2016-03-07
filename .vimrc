@@ -73,6 +73,7 @@ set laststatus=2
 set mouse=a
 set noswapfile
 set nowrapscan
+set secure
 set shiftwidth=2
 set showcmd
 set smarttab
@@ -108,55 +109,7 @@ set wildmenu
 "" so that you can undo CTRL-U after inserting a line break.
 "inoremap <C-U> <C-G>u<C-U>
 "colorscheme desert256
-"
-"if &term =~ "xterm*"
-"  " use an orange cursor in insert mode
-"  let &t_SI = "\<Esc>]12;orange\x7"
-"  " use a red cursor otherwise
-"  let &t_EI = "\<Esc>]12;blue\x7"
-"  silent !echo -ne "\033]12;blue\007"
-"  " reset cursor when vim exits
-"  autocmd VimLeave * silent !echo -ne "\033]12;black\007"
-"endif
-"set tags=tags,.tags,../tags
-"" Switch syntax highlighting on, when the terminal has colors
-"" Also switch on highlighting the last used search pattern.
-"" Only do this part when compiled with support for autocommands.
-"if has("autocmd")
-"
-"  " Enable file type detection.
-"  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-"  " 'cindent' is on in C files, etc.
-"  " Also load indent files, to automatically do language-dependent indenting.
-"  filetype plugin indent on
-"
-"  " Put these in an autocmd group, so that we can delete them easily.
-"  augroup vimrcEx
-"  au!
-"
-"  " For all text files set 'textwidth' to 78 characters.
-"  autocmd FileType text setlocal textwidth=78
-"
-"  " When editing a file, always jump to the last known cursor position.
-"  " Don't do it when the position is invalid or when inside an event handler
-"  " (happens when dropping a file on gvim).
-"  " Also don't do it when the mark is in the first line, that is the default
-"  " position when opening a file.
-"  autocmd BufReadPost *
-"    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-"    \   exe "normal! g`\"" |
-"    \ endif
-"
-"  autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"
-"  augroup END
-"
-"else
-"
-"  set autoindent		" always set autoindenting on
-"
-"endif " has("autocmd")
-"
+"!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "" Convenient command to see the difference between the current buffer and the
 "" file it was loaded from, thus the changes you made.
 "" Only define it when not defined already.
@@ -165,20 +118,7 @@ set wildmenu
 "		  \ | wincmd p | diffthis
 "endif
 "
-"function! RenameTestFunctions(test_name)
-"	execute ',$s/'. a:test_name . '_\(\_d\+\)/\="' . a:test_name .'_" . (submatch(1)+1)/'
-"endfunction
-"
-"" Want to use <LocalReader> symbol for mappings
-"" let maplocalleader = "_"
-"au BufEnter *.hs compiler ghc
-""configure browser for haskell_doc.vim
-"let g:haddock_browser = "/usr/bin/google-chrome"
-""update tags file in current directory
-""map <C-L> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-""Call NERDTree window
-"map <Leader>n :NERDTreeToggle<CR>
-""Search for files and buffers
+"let maplocalleader = "_"
 "map <C-f>f :FufFile<CR>
 "map <C-f>c :FufCoverageFile<CR>
 "map <C-f>b :FufBuffer<CR>
@@ -247,7 +187,6 @@ set wildmenu
 ""
 "" Some information is always good...
 "set showfulltag
-"set wildmode=list:longest
 "set report=0
 ""set shortmess+=asWAI
 "set showtabline=0
