@@ -40,8 +40,8 @@
 .tgdb
 .thumbnails
 .thunderbird
-.vim/.netrwhist
 .vim/bundle
+.vim/undodir
 .viminfo
 .xscreensaver
 .xsession-errors
