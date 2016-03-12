@@ -3,8 +3,7 @@ function _rc_mediawiki_back_up
   _RC_CURRENT_DATE_STAMP=`date +%Y_%m_%d_%H_%M_%S`
   _RC_MEDIAWIKI_BACKUPS_DIRECTORY="/private/backups/mediawiki"
 
-  sudo echo Primary check is succeeded.
-  sudo echo Secondary check is succeeded.
+  [[ `sudo whoami` != "root" ]] && return 1
 
   if [[ ! -d ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP} ]]
   then
