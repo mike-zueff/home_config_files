@@ -17,7 +17,7 @@ fi
 
 # Put your fun stuff here.
 
-PATH=${PATH}:/usr/sbin
+PATH=${PATH}:/opt/android-sdk-update-manager/platform-tools:/opt/android-sdk-update-manager/tools:/usr/sbin
 
 cd /tmp
 
