@@ -1,5 +1,3 @@
-export ANDROID_SWT=/usr/share/swt-3.7/lib
-
 function _rc_smartphone_back_up
 {
   _RC_CURRENT_DATE_STAMP=`date +%Y_%m_%d_%H_%M_%S`
