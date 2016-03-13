@@ -22,6 +22,7 @@
 .config/nitrogen
 .config/pavucontrol.ini
 .config/pulse
+.config/pychess
 .config/rc_files/mediawiki_credentials.sh
 .config/wireshark
 .dbus
@@ -40,9 +41,6 @@
 .tgdb
 .thumbnails
 .thunderbird
-.vim/bundle
-.vim/undodir
-.viminfo
 .xscreensaver
 .xsession-errors
 .xsession-errors.old
@@ -50,4 +48,5 @@ Calibre Library
 Downloads
 dump
 lingvo
+mnt
 wallpapers
