@@ -24,6 +24,7 @@
 .config/pulse
 .config/pychess
 .config/rc_files/mediawiki_credentials.sh
+.config/smplayer
 .config/wireshark
 .dbus
 .dmrc
