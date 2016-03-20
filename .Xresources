@@ -3,7 +3,7 @@ URxvt*boldFont: xft:Hack-12:bold
 URxvt*boldItalicFont: xft:Hack-12:bold:italic
 URxvt*borderColor: web purple
 URxvt*color12: dark orchid
-URxvt*color4: dark orchid
+URxvt*color4: maroon
 URxvt*externalBorder: 0
 URxvt*font: xft:Hack-12
 URxvt*foreground: white
