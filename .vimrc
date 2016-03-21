@@ -1,37 +1,41 @@
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-if !isdirectory(expand("~/.vim/bundle"))
-  let g:bundle_installation_is_required=1
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-endif
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar'
-Plugin 'mbbill/undotree'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-
-call vundle#end()
-filetype plugin indent on
-if exists("g:bundle_installation_is_required")
-  :PluginUpdate
-  :qall
+" vim-plug and the related stuff.
+if empty(glob("~/.vim"))
+  let g:vimrc_is_bundle_installation_required=1
+  silent !curl --create-dirs --output ~/.vim/autoload/plug.vim
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-function! ToggleColorColumnValue()
-  if &l:colorcolumn
+call plug#begin()
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+call plug#end()
+
+if exists("g:vimrc_is_bundle_installation_required")
+  PlugUpdate
+  call mkdir(expand("~/.vim/undodir"))
+  silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
+  qall
+endif
+
+" Automatic commands.
+autocmd VimResized * execute "normal\<c-w>="
+
+" Color scheme and the related stuff.
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_invert_tabline=1
+colorscheme gruvbox
+
+" Functions.
+function!GToggleColorColumnValue()
+  if&l:colorcolumn
     setlocal colorcolumn&
   else
     setlocal colorcolumn=81
   endif
 endfunction
 
-function! ToggleCursorAccentuation()
-  if &l:cursorline
+function!GToggleCursorAccentuation()
+  if&l:cursorline
     setlocal cursorcolumn&
     setlocal cursorline&
   else
@@ -40,39 +44,23 @@ function! ToggleCursorAccentuation()
   endif
 endfunction
 
-if !isdirectory(expand("~/.vim/undodir"))
-  :call mkdir(expand("~/.vim/undodir"))
-endif
+" Syntax highlighting.
+highlight Comment ctermfg=156
 
-colorscheme slate
-
-highlight ColorColumn cterm=bold ctermbg=209 ctermfg=0
-highlight CursorColumn cterm=bold ctermbg=239 ctermfg=15
-highlight CursorLine cterm=bold ctermbg=239 ctermfg=15
-highlight SignColumn ctermbg=236
-
-let dotree_SetFocusWhenToggle=1
-let g:NERDTreeCaseSensitiveSort=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeShowHidden=1
+" Variables.
 let g:airline_powerline_fonts=1
-let g:gitgutter_override_sign_column_highlight=0
-let g:tagbar_autoclose=1
-let g:tagbar_autofocus=1
-let g:tagbar_compact=1
-let g:undotree_SetFocusWhenToggle=1
-let g:undotree_WindowLayout=3
 
-nnoremap <silent> <F2> :call ToggleColorColumnValue()<CR>
-nnoremap <silent> <F3> :call ToggleCursorAccentuation()<CR>
-nnoremap <silent> <F4> :NERDTreeToggle<CR>
-nnoremap <silent> <F5> :TagbarToggle<CR>
-nnoremap <silent> <F6> :UndotreeToggle<CR>
-nnoremap <silent> <F7> :tab split<CR>:tabmove<CR>
-nnoremap <F8> :$tabnew<CR>
-nnoremap <F11> :cNext<CR>
-nnoremap <F12> :cnext<CR>
+" Key mappings.
+nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
+nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
+nnoremap<silent><f7> :tab split<cr>:tabmove<cr>
+nnoremap<f8> :$tabnew<cr>
+nnoremap<f11> :cNext<cr>
+nnoremap<f12> :cnext<cr>
+nnoremap<leader><f11> :lNext<cr>
+nnoremap<leader><f12> :lnext<cr>
 
+" Options.
 set colorcolumn=81
 set confirm
 set expandtab
@@ -81,8 +69,10 @@ set ignorecase
 set incsearch
 set laststatus=2
 set mouse=a
+set noexrc
 set noswapfile
 set nowrapscan
+set pastetoggle=<f10>
 set secure
 set shiftwidth=2
 set showcmd
@@ -92,7 +82,48 @@ set undodir=~/.vim/undodir
 set undofile
 set updatetime=1000
 set wildmenu
-"""""""""""""""""""""""""""""
+" !!! ------------------------------------------------------------------
+"  let g:NERDTreeCaseSensitiveSort=1
+"  let g:NERDTreeMinimalUI=1
+"  let g:NERDTreeShowHidden=1
+"  let g:ctrlp_cache_dir = "~/.vim/ctrlp"
+"  nnoremap <silent> <F4> :NERDTreeToggle<CR>
+"  nnoremap <silent> <F5> :TagbarToggle<CR>
+"  nnoremap <silent> <F6> :UndotreeToggle<CR>
+"------TEMPORARY----------------
+  "Plug 'airblade/vim-gitgutter'
+  "Plug 'ctrlpvim/ctrlp.vim'
+  "Plug 'mileszs/ack.vim'
+  "Plug 'scrooloose/nerdtree'
+  "Plug 'tpope/vim-fugitive'
+""tab header bgcolor
+"Plugin 'majutsushi/tagbar'
+"Plugin 'mbbill/undotree'
+"plugin indent on"
+"set textwidth=0
+
+" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/help.vim
+"  silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/qf.vim
+" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
+" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
+" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/CTRLP
+"  silent !echo "setlocal colorcolumn=82" > ~/.vim/ftplugin/diff.vim
+
+
+"let g:tagbar_autoclose=1
+"let g:tagbar_compact=1
+"let g:undotree_DiffCommand="diff --unified=0"
+"let g:undotree_SetFocusWhenToggle=1
+"let g:undotree_SetFocusWhenToggle=1
+"let g:undotree_SplitWidth=83
+"let g:undotree_WindowLayout=3
+
+
+
+
+
+
+"EGO""""""""""""""""""""""""""""
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'mileszs/ack.vim'
@@ -101,14 +132,10 @@ set wildmenu
 "Plugin 'scrooloose/nerdcommenter'
 ""Plugin 'tpope/vim-unimpaired'
 ""Plugin 'godlygeek/tabular'
-""Plugin 'tpope/vim-surround'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'FuzzyFinder'
-"Plugin 'xoria256.vim'
 "Plugin 'guicolorscheme.vim'
-"Plugin 'desert256.vim'
 "Plugin 'xterm16.vim'
-""Plugin 'Gundo'
 ""Plugin 'SuperTab'
 ""Plugin 'ZoomWin'
 " Bundle 'VisIncr'
@@ -155,22 +182,6 @@ set wildmenu
 "  highlight clear ExtraWhitespace
 "endfunction
 "
-"function! DoHighlightLL()
-"  if exists("g:line_max_length")
-"    if exists("w:m_hl_ll")
-"      call matchdelete(w:m_hl_ll)
-"    endif
-"    let w:m_hl_ll=matchadd('ErrorMsg', '\%>'. g:line_max_length . 'v.\+', -1)
-"  endif
-"endfunction
-"
-"function! HighlightLongLines(max_length)
-"  call ShadowLongLines()
-"  let g:line_max_length = a:max_length
-"  call DoHighlightLL()
-"  autocmd WinEnter * call DoHighlightLL()
-"endfunction
-"
 "function! ShadowLongLines()
 "  if exists("w:m_hl_ll")
 "    call matchdelete(w:m_hl_ll)
@@ -179,9 +190,6 @@ set wildmenu
 "  endif
 "  unlet! g:line_max_length
 "endfunction
-"" TODO vim highlight tab chars!!!
-
-
 "set formatoptions+=ntcroq21
 """ Some automatic cursor moving
 ""set nostartofline
@@ -228,3 +236,8 @@ set wildmenu
 "set list
 "undodir
 "retab, select-all + = (reformat)
+"vim clipboards - 2
+"easytags
+"https://github.com/Valloric/YouCompleteMe
+"http://www.oualline.com/vim/10/top_10.html
+""AT LAST: select all + =
