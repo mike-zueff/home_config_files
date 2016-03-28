@@ -13,11 +13,15 @@ call plug#end()
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
+  silent !sed --in-place 452s/bg4/gb.faded_orange/
+      \ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   qall
 endif
 
 " Automatic commands.
+autocmd FileType help setlocal colorcolumn&
+autocmd FileType vim-plug setlocal colorcolumn&
 autocmd VimResized * execute "normal\<c-w>="
 
 " Color scheme and the related stuff.
@@ -118,7 +122,7 @@ set wildmenu
 "let g:undotree_SplitWidth=83
 "let g:undotree_WindowLayout=3
 
-
+" set title ??????
 
 
 
@@ -159,29 +163,6 @@ set wildmenu
 "map <C-f>c :FufCoverageFile<CR>
 "map <C-f>b :FufBuffer<CR>
 "
-"function! ChangeSpacesMatching(new_pat)
-"  if exists("w:m_unwanted_spaces")
-"    call matchdelete(w:m_unwanted_spaces)
-"  endif
-"  let w:m_unwanted_spaces=matchadd('ExtraWhitespace', a:new_pat)
-"endfunction
-"
-"function! ShowUnwantedSpaces()
-"  highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-"  let w:m_unwanted_spaces=matchadd('ExtraWhitespace','\s\+$')
-"  autocmd WinEnter    * call ChangeSpacesMatching('\s\+$')
-"  autocmd InsertEnter * call ChangeSpacesMatching('\s\+\%#\@<!$')
-"  autocmd InsertLeave * call ChangeSpacesMatching('\s\+$')
-"endfunction
-"
-"function! HideUnwantedSpaces()
-"  call matchdelete(w:m_unwanted_spaces)
-"  autocmd! WinEnter    * call ChangeSpacesMatching('\s\+$')
-"  autocmd! InsertEnter * call ChangeSpacesMatching('\s\+\%#\@<!$')
-"  autocmd! InsertLeave * call ChangeSpacesMatching('\s\+$')
-"  highlight clear ExtraWhitespace
-"endfunction
-"
 "function! ShadowLongLines()
 "  if exists("w:m_hl_ll")
 "    call matchdelete(w:m_hl_ll)
@@ -191,7 +172,6 @@ set wildmenu
 "  unlet! g:line_max_length
 "endfunction
 "set formatoptions+=ntcroq21
-""" Some automatic cursor moving
 ""set nostartofline
 "set nojoinspaces
 "set showfulltag
