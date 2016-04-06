@@ -6,6 +6,7 @@ if empty(glob("~/.vim"))
 endif
 
 call plug#begin()
+Plug 'airblade/vim-gitgutter'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 call plug#end()
@@ -13,8 +14,7 @@ call plug#end()
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
-  silent !sed --in-place 452s/bg4/gb.faded_orange/
-      \ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
+  silent !sed --in-place 452s/4/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   qall
 endif
@@ -87,7 +87,6 @@ set wildmenu
 
 " Disabled options.
 set noexrc
-set noshowmode
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
@@ -100,7 +99,6 @@ set nowrapscan
 "  nnoremap <silent> <F6> :UndotreeToggle<CR>
 "------TEMPORARY----------------
 "help what os togglepaste???
-  "Plug 'airblade/vim-gitgutter'
   "Plug 'ctrlpvim/ctrlp.vim'
   "Plug 'mileszs/ack.vim'
   "Plug 'scrooloose/nerdtree'
@@ -111,8 +109,6 @@ set nowrapscan
 "plugin indent on"
 "set textwidth=0
 
-" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/help.vim
-"  silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/qf.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/CTRLP
