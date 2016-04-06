@@ -7,7 +7,9 @@ endif
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
@@ -20,6 +22,8 @@ if exists("g:vimrc_is_bundle_installation_required")
 endif
 
 " Automatic commands.
+autocmd FileType fugitiveblame setlocal colorcolumn&
+autocmd FileType gitcommit setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
@@ -54,6 +58,9 @@ highlight Comment ctermfg=156
 
 " Variables.
 let g:airline_powerline_fonts=1
+let g:ctrlp_cache_dir="~/.vim/ctrlp"
+let g:ctrlp_show_hidden=1
+let g:ctrlp_tilde_homedir=1
 
 " Key mappings.
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
@@ -93,20 +100,14 @@ set nowrapscan
 "  let g:NERDTreeCaseSensitiveSort=1
 "  let g:NERDTreeMinimalUI=1
 "  let g:NERDTreeShowHidden=1
-"  let g:ctrlp_cache_dir = "~/.vim/ctrlp"
 "  nnoremap <silent> <F4> :NERDTreeToggle<CR>
 "  nnoremap <silent> <F5> :TagbarToggle<CR>
 "  nnoremap <silent> <F6> :UndotreeToggle<CR>
-"------TEMPORARY----------------
 "help what os togglepaste???
-  "Plug 'ctrlpvim/ctrlp.vim'
   "Plug 'mileszs/ack.vim'
   "Plug 'scrooloose/nerdtree'
-  "Plug 'tpope/vim-fugitive'
-""tab header bgcolor
 "Plugin 'majutsushi/tagbar'
 "Plugin 'mbbill/undotree'
-"plugin indent on"
 "set textwidth=0
 
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
