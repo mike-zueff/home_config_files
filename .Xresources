@@ -10,8 +10,10 @@ URxvt*foreground: white
 URxvt*iconFile: /usr/share/icons/Tango/scalable/apps/utilities-terminal.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
+URxvt*perl-ext-common: default,confirm-paste
 URxvt*saveLines: 100000
 URxvt*scrollBar: false
+URxvt*url-launcher: /usr/bin/xdg-open
 Xcursor.size: 24
 Xcursor.theme: Vanilla-DMZ
 Xft.antialias: true

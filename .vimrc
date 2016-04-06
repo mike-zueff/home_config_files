@@ -95,6 +95,7 @@ set wildmenu
 "  nnoremap <silent> <F5> :TagbarToggle<CR>
 "  nnoremap <silent> <F6> :UndotreeToggle<CR>
 "------TEMPORARY----------------
+"help what os togglepaste???
   "Plug 'airblade/vim-gitgutter'
   "Plug 'ctrlpvim/ctrlp.vim'
   "Plug 'mileszs/ack.vim'
