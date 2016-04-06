@@ -21,6 +21,7 @@ endif
 
 " Automatic commands.
 autocmd FileType help setlocal colorcolumn&
+autocmd FileType qf setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
 autocmd VimResized * execute "normal\<c-w>="
 
@@ -64,7 +65,7 @@ nnoremap<f12> :cnext<cr>
 nnoremap<leader><f11> :lNext<cr>
 nnoremap<leader><f12> :lnext<cr>
 
-" Options.
+" Enabled options.
 set colorcolumn=81
 set confirm
 set expandtab
@@ -73,9 +74,6 @@ set ignorecase
 set incsearch
 set laststatus=2
 set mouse=a
-set noexrc
-set noswapfile
-set nowrapscan
 set pastetoggle=<f10>
 set secure
 set shiftwidth=2
@@ -86,6 +84,12 @@ set undodir=~/.vim/undodir
 set undofile
 set updatetime=1000
 set wildmenu
+
+" Disabled options.
+set noexrc
+set noshowmode
+set noswapfile
+set nowrapscan
 " !!! ------------------------------------------------------------------
 "  let g:NERDTreeCaseSensitiveSort=1
 "  let g:NERDTreeMinimalUI=1
