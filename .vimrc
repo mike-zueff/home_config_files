@@ -9,6 +9,8 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 call plug#end()
@@ -25,6 +27,7 @@ endif
 autocmd FileType fugitiveblame setlocal colorcolumn&
 autocmd FileType gitcommit setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
+autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
 autocmd VimResized * execute "normal\<c-w>="
@@ -57,6 +60,9 @@ endfunction
 highlight Comment ctermfg=156
 
 " Variables.
+let g:NERDTreeCaseSensitiveSort=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_show_hidden=1
@@ -65,6 +71,7 @@ let g:ctrlp_tilde_homedir=1
 " Key mappings.
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
+nnoremap<silent><f4> :NERDTreeToggle<cr>
 nnoremap<silent><f7> :tab split<cr>:tabmove<cr>
 nnoremap<f8> :$tabnew<cr>
 nnoremap<f11> :cNext<cr>
@@ -97,22 +104,15 @@ set noexrc
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
-"  let g:NERDTreeCaseSensitiveSort=1
-"  let g:NERDTreeMinimalUI=1
-"  let g:NERDTreeShowHidden=1
-"  nnoremap <silent> <F4> :NERDTreeToggle<CR>
 "  nnoremap <silent> <F5> :TagbarToggle<CR>
 "  nnoremap <silent> <F6> :UndotreeToggle<CR>
 "help what os togglepaste???
-  "Plug 'mileszs/ack.vim'
-  "Plug 'scrooloose/nerdtree'
 "Plugin 'majutsushi/tagbar'
 "Plugin 'mbbill/undotree'
 "set textwidth=0
 
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
-" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/CTRLP
 "  silent !echo "setlocal colorcolumn=82" > ~/.vim/ftplugin/diff.vim
 
 
@@ -132,7 +132,6 @@ set nowrapscan
 "EGO""""""""""""""""""""""""""""
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'mileszs/ack.vim'
 ""Plugin 'geetarista/ego.vim'
 ""Plugin 'jimenezrick/vimerl.git'
 "Plugin 'scrooloose/nerdcommenter'
