@@ -10,7 +10,7 @@ URxvt*foreground: white
 URxvt*iconFile: /usr/share/icons/Tango/scalable/apps/utilities-terminal.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
-URxvt*perl-ext-common: default,confirm-paste
+URxvt*perl-ext-common: default,confirm-paste,selection-to-clipboard
 URxvt*saveLines: 100000
 URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
@@ -27,7 +27,7 @@ xscreensaver*Dialog.borderWidth: 0
 xscreensaver*captureStderr: false
 xscreensaver*dateFormat:
 xscreensaver*passwd.body.label:
-xscreensaver*passwd.heading.label: screensaver for x11
+xscreensaver*passwd.heading.label: xscreensaver
 xscreensaver*passwd.thermometer.foreground: #ff0000
 xscreensaver*passwd.thermometer.width: 16
 xscreensaver*passwd.uname: false

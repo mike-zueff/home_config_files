@@ -93,6 +93,8 @@ set secure
 set shiftwidth=2
 set showcmd
 set smarttab
+set splitbelow
+set splitright
 set tabstop=2
 set undodir=~/.vim/undodir
 set undofile
@@ -109,7 +111,100 @@ set nowrapscan
 "help what os togglepaste???
 "Plugin 'majutsushi/tagbar'
 "Plugin 'mbbill/undotree'
+"nerdtree git plugin
 "set textwidth=0
+
+"========================================!
+"Plug 'chrisbra/NrrwRgn'
+"Plug 'chrisbra/vim-diff-enhanced'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'fatih/vim-go'
+"Plug 'gregsexton/MatchTag'
+"Plug 'itchyny/lightline.vim'
+"Plug 'jimsei/winresizer'
+"Plug 'junegunn/vim-after-object'
+"Plug 'junegunn/vim-easy-align'
+"Plug 'junegunn/vim-oblique'
+"Plug 'junegunn/vim-pseudocl'
+"Plug 'kana/vim-textobj-indent'
+"Plug 'kana/vim-textobj-user'
+"Plug 'matze/vim-move'
+"Plug 'mbbill/fencview'
+"Plug 'osyo-manga/vim-over'
+"Plug 'paradigm/TextObjectify'
+"Plug 'Raimondi/delimitMate'
+"Plug 'rking/ag.vim'
+"Plug 'romainl/vim-qlist'
+"Plug 'ryan-cf/netrw'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/neoinclude.vim'
+"Plug 'Shougo/vimproc.vim'
+"Plug 'Shougo/vimshell.vim'
+"Plug 'sjl/tslime2.vim'
+"Plug 'tomtom/tcomment_vim'
+"Plug 'tpope/timl'
+"Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-endwise'
+"Plug 'tpope/vim-markdown'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-surround'
+"Plug 'vim-scripts/ingo-library'
+"Plug 'vim-scripts/visualrepeat'
+"Plug 'wellle/tmux-complete.vim'
+"Plug 'zchee/deoplete-jedi'
+"========================================!
+
+
+"" ONEMORE
+"Plugin 'VundleVim/Vundle.vim'
+"
+""	Vim look&feel
+"Plugin 'terryma/vim-expand-region'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'sjl/gundo.vim'
+"Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'mhinz/vim-startify'
+" 
+"" Needed by unite
+"Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/unite.vim'
+"
+"" File Browser
+"Plugin 'Shougo/vimfiler.vim'
+"
+"" Maps for quickfix and location windows (leader-q and leader-l respectively)
+"Plugin 'Valloric/ListToggle'
+"
+"" Dev
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'octol/vim-cpp-enhanced-highlight' 
+"Plugin 'lyuts/vim-rtags'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+"Plugin 'tomtom/tcomment_vim'
+"
+"" Git
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
+"
+"" pairs delimiters
+"Plugin 'Raimondi/delimitMate' 
+"
+"" Switch source/header
+"Plugin 'derekwyatt/vim-fswitch'
+"
+"" Better marks
+"Plugin 'kshenoy/vim-signature'
+"
+"
+"!ONEMORE
+
+
+"easymotion, surround, extended-ft, bracketed-paste, и vimux + vimux-paster
 
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
