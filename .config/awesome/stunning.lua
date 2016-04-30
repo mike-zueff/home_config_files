@@ -1,6 +1,6 @@
 local awful = require("awful")
 
-local awesome_dex_lock_file = "dex_have_been_executed"
+local awesome_dex_lock_file = "dex_had_been_executed"
 local awesome_run_time_directory = "/tmp/run_time/awesome-related"
 
 function execute_once(process_name, argv, launcher)

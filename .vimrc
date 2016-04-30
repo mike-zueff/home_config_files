@@ -6,11 +6,14 @@ if empty(glob("~/.vim"))
 endif
 
 call plug#begin()
+" Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 call plug#end()
@@ -27,8 +30,9 @@ endif
 autocmd FileType fugitiveblame setlocal colorcolumn&
 autocmd FileType gitcommit setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
-autocmd FileType nerdtree setlocal colorcolumn&
+"!!! autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
+autocmd FileType tagbar setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
 autocmd VimResized * execute "normal\<c-w>="
 
@@ -67,11 +71,15 @@ let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
+let g:tagbar_autoclose=1
+let g:tagbar_compact=1
+let g:tagbar_indent=0
 
 " Key mappings.
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
 nnoremap<silent><f4> :NERDTreeToggle<cr>
+nnoremap<silent><f5> :TagbarToggle<cr>
 nnoremap<silent><f7> :tab split<cr>:tabmove<cr>
 nnoremap<f8> :$tabnew<cr>
 nnoremap<f11> :cNext<cr>
@@ -106,12 +114,9 @@ set noexrc
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
-"  nnoremap <silent> <F5> :TagbarToggle<CR>
 "  nnoremap <silent> <F6> :UndotreeToggle<CR>
 "help what os togglepaste???
-"Plugin 'majutsushi/tagbar'
 "Plugin 'mbbill/undotree'
-"nerdtree git plugin
 "set textwidth=0
 
 "========================================!
@@ -133,10 +138,8 @@ set nowrapscan
 "Plug 'osyo-manga/vim-over'
 "Plug 'paradigm/TextObjectify'
 "Plug 'Raimondi/delimitMate'
-"Plug 'rking/ag.vim'
 "Plug 'romainl/vim-qlist'
 "Plug 'ryan-cf/netrw'
-"Plug 'scrooloose/nerdtree'
 "Plug 'Shougo/deoplete.nvim'
 "Plug 'Shougo/neoinclude.vim'
 "Plug 'Shougo/vimproc.vim'
@@ -153,66 +156,36 @@ set nowrapscan
 "Plug 'vim-scripts/visualrepeat'
 "Plug 'wellle/tmux-complete.vim'
 "Plug 'zchee/deoplete-jedi'
-"========================================!
-
-
-"" ONEMORE
-"Plugin 'VundleVim/Vundle.vim'
-"
-""	Vim look&feel
 "Plugin 'terryma/vim-expand-region'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'mhinz/vim-startify'
-" 
-"" Needed by unite
 "Plugin 'Shougo/vimproc.vim'
 "Plugin 'Shougo/unite.vim'
-"
-"" File Browser
 "Plugin 'Shougo/vimfiler.vim'
-"
 "" Maps for quickfix and location windows (leader-q and leader-l respectively)
 "Plugin 'Valloric/ListToggle'
-"
-"" Dev
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'majutsushi/tagbar'
-"Plugin 'octol/vim-cpp-enhanced-highlight' 
+"Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'lyuts/vim-rtags'
 "Plugin 'SirVer/ultisnips'
 "Plugin 'honza/vim-snippets'
 "Plugin 'tomtom/tcomment_vim'
-"
-"" Git
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'airblade/vim-gitgutter'
-"
 "" pairs delimiters
-"Plugin 'Raimondi/delimitMate' 
+"Plugin 'Raimondi/delimitMate'
 "
 "" Switch source/header
 "Plugin 'derekwyatt/vim-fswitch'
 "
 "" Better marks
 "Plugin 'kshenoy/vim-signature'
-"
-"
-"!ONEMORE
-
-
 "easymotion, surround, extended-ft, bracketed-paste, и vimux + vimux-paster
 
-" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/tagbar.vim
 " silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
 "  silent !echo "setlocal colorcolumn=82" > ~/.vim/ftplugin/diff.vim
 
 
-"let g:tagbar_autoclose=1
-"let g:tagbar_compact=1
 "let g:undotree_DiffCommand="diff --unified=0"
 "let g:undotree_SetFocusWhenToggle=1
 "let g:undotree_SetFocusWhenToggle=1
