@@ -30,7 +30,6 @@ endif
 autocmd FileType fugitiveblame setlocal colorcolumn&
 autocmd FileType gitcommit setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
-"!!! autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
 autocmd FileType tagbar setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
