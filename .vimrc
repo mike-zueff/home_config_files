@@ -14,6 +14,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 call plug#end()
@@ -27,9 +28,12 @@ if exists("g:vimrc_is_bundle_installation_required")
 endif
 
 " Automatic commands.
+autocmd FileType diff setlocal colorcolumn=82
 autocmd FileType fugitiveblame setlocal colorcolumn&
 autocmd FileType gitcommit setlocal colorcolumn&
+autocmd FileType gundo setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
+autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
 autocmd FileType tagbar setlocal colorcolumn&
 autocmd FileType vim-plug setlocal colorcolumn&
@@ -70,6 +74,9 @@ let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
+let g:gundo_help=0
+let g:gundo_right=1
+let g:gundo_width=83
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
 let g:tagbar_indent=0
@@ -79,6 +86,7 @@ nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
 nnoremap<silent><f4> :NERDTreeToggle<cr>
 nnoremap<silent><f5> :TagbarToggle<cr>
+nnoremap<silent><f6> :GundoToggle<cr>
 nnoremap<silent><f7> :tab split<cr>:tabmove<cr>
 nnoremap<f8> :$tabnew<cr>
 nnoremap<f11> :cNext<cr>
@@ -113,12 +121,9 @@ set noexrc
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
-"  nnoremap <silent> <F6> :UndotreeToggle<CR>
+"vim sort words in line!
 "help what os togglepaste???
-"Plugin 'mbbill/undotree'
 "set textwidth=0
-
-"========================================!
 "Plug 'chrisbra/NrrwRgn'
 "Plug 'chrisbra/vim-diff-enhanced'
 "Plug 'christoomey/vim-tmux-navigator'
@@ -156,7 +161,6 @@ set nowrapscan
 "Plug 'wellle/tmux-complete.vim'
 "Plug 'zchee/deoplete-jedi'
 "Plugin 'terryma/vim-expand-region'
-"Plugin 'sjl/gundo.vim'
 "Plugin 'fholgado/minibufexpl.vim'
 "Plugin 'Shougo/vimproc.vim'
 "Plugin 'Shougo/unite.vim'
@@ -181,21 +185,9 @@ set nowrapscan
 "Plugin 'kshenoy/vim-signature'
 "easymotion, surround, extended-ft, bracketed-paste, и vimux + vimux-paster
 
-" silent !echo "setlocal colorcolumn&" > ~/.vim/ftplugin/undotree.vim
-"  silent !echo "setlocal colorcolumn=82" > ~/.vim/ftplugin/diff.vim
-
-
 "let g:undotree_DiffCommand="diff --unified=0"
-"let g:undotree_SetFocusWhenToggle=1
-"let g:undotree_SetFocusWhenToggle=1
 "let g:undotree_SplitWidth=83
-"let g:undotree_WindowLayout=3
-
 " set title ??????
-
-
-
-
 "EGO""""""""""""""""""""""""""""
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
