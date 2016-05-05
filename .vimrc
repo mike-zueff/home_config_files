@@ -14,6 +14,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
+Plug 'simeji/winresizer'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -80,6 +81,8 @@ let g:gundo_width=83
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
 let g:tagbar_indent=0
+let g:winresizer_horiz_resize=1
+let g:winresizer_vert_resize=1
 
 " Key mappings.
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
@@ -124,33 +127,8 @@ set nowrapscan
 "vim sort words in line!
 "help what os togglepaste???
 "set textwidth=0
-"Plug 'chrisbra/NrrwRgn'
-"Plug 'chrisbra/vim-diff-enhanced'
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'fatih/vim-go'
-"Plug 'gregsexton/MatchTag'
-"Plug 'itchyny/lightline.vim'
-"Plug 'jimsei/winresizer'
-"Plug 'junegunn/vim-after-object'
-"Plug 'junegunn/vim-easy-align'
-"Plug 'junegunn/vim-oblique'
-"Plug 'junegunn/vim-pseudocl'
-"Plug 'kana/vim-textobj-indent'
-"Plug 'kana/vim-textobj-user'
-"Plug 'matze/vim-move'
-"Plug 'mbbill/fencview'
-"Plug 'osyo-manga/vim-over'
-"Plug 'paradigm/TextObjectify'
-"Plug 'Raimondi/delimitMate'
-"Plug 'romainl/vim-qlist'
-"Plug 'ryan-cf/netrw'
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'Shougo/neoinclude.vim'
-"Plug 'Shougo/vimproc.vim'
-"Plug 'Shougo/vimshell.vim'
-"Plug 'sjl/tslime2.vim'
+" Maps for quickfix and location windows (leader-q and leader-l respectively)
 "Plug 'tomtom/tcomment_vim'
-"Plug 'tpope/timl'
 "Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-markdown'
@@ -159,36 +137,8 @@ set nowrapscan
 "Plug 'vim-scripts/ingo-library'
 "Plug 'vim-scripts/visualrepeat'
 "Plug 'wellle/tmux-complete.vim'
-"Plug 'zchee/deoplete-jedi'
-"Plugin 'terryma/vim-expand-region'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'Shougo/vimproc.vim'
-"Plugin 'Shougo/unite.vim'
-"Plugin 'Shougo/vimfiler.vim'
-"" Maps for quickfix and location windows (leader-q and leader-l respectively)
-"Plugin 'Valloric/ListToggle'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'lyuts/vim-rtags'
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
-"Plugin 'tomtom/tcomment_vim'
-"" pairs delimiters
-"Plugin 'Raimondi/delimitMate'
-"
-"" Switch source/header
-"Plugin 'derekwyatt/vim-fswitch'
-"
-"" Better marks
-"Plugin 'kshenoy/vim-signature'
 "easymotion, surround, extended-ft, bracketed-paste, и vimux + vimux-paster
-
-"let g:undotree_DiffCommand="diff --unified=0"
-"let g:undotree_SplitWidth=83
 " set title ??????
-"EGO""""""""""""""""""""""""""""
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
 ""Plugin 'geetarista/ego.vim'
@@ -208,7 +158,6 @@ set nowrapscan
 "set clipboard=unnamedplus
 "set showtabline=2
 "map Q gq
-"colorscheme desert256
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "" Convenient command to see the difference between the current buffer and the
 "" file it was loaded from, thus the changes you made.
@@ -219,10 +168,6 @@ set nowrapscan
 "endif
 "
 "let maplocalleader = "_"
-"map <C-f>f :FufFile<CR>
-"map <C-f>c :FufCoverageFile<CR>
-"map <C-f>b :FufBuffer<CR>
-"
 "function! ShadowLongLines()
 "  if exists("w:m_hl_ll")
 "    call matchdelete(w:m_hl_ll)
@@ -238,25 +183,13 @@ set nowrapscan
 "set report=0
 ""set shortmess+=asWAI
 "set showtabline=0
-""set noshowmode
 "set sidescroll=15
-"" Nice :list and :set list
-"set listchars=tab:>-,trail:.,extends:+,eol:$,precedes:+
-""
 "set fillchars="vert: ,fold: "
 "set foldmethod=syntax
 ""set foldnestmax=1
 "set nofoldenable
-""
-"" Diff options
 "set diffopt=filler,context:3
 "set virtualedit=block
-""set viminfo='100,h,%
-"set sessionoptions+=winpos
-""" Don't save options to session file - it's possibly buggy
-"set sessionoptions-=options
-"" Pretty select with mouse and shifted special keys
-"behave mswin
 """ ...but not reset selection with not-shifted special keys
 "set keymodel-=stopsel
 ""set selection=inclusive
@@ -273,11 +206,12 @@ set nowrapscan
 "create undodir
 ""vim list buffers
 "vim move buffer to tab or window
-"set list
-"undodir
-"retab, select-all + = (reformat)
 "vim clipboards - 2
 "easytags
-"https://github.com/Valloric/YouCompleteMe
 "http://www.oualline.com/vim/10/top_10.html
+"https://github.com/xolox/vim-easytags
+"https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
+"https://github.com/spf13/spf13-vim/blob/master/.vimrc
+"https://github.com/scrooloose/nerdcommenter
+"https://github.com/rdnetto/YCM-Generator
 ""AT LAST: select all + =
