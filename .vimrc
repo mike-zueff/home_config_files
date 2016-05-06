@@ -101,6 +101,7 @@ nnoremap<leader><f12> :lnext<cr>
 set colorcolumn=81
 set confirm
 set expandtab
+set formatoptions+=j
 set history=5000
 set ignorecase
 set incsearch
@@ -121,6 +122,7 @@ set wildmenu
 
 " Disabled options.
 set noexrc
+set nojoinspaces
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
@@ -137,8 +139,9 @@ set nowrapscan
 "Plug 'vim-scripts/ingo-library'
 "Plug 'vim-scripts/visualrepeat'
 "Plug 'wellle/tmux-complete.vim'
-"easymotion, surround, extended-ft, bracketed-paste, и vimux + vimux-paster
-" set title ??????
+"Plug extended-ft
+"Plug bracketed-paste
+"Plug vimux + vimux-paster
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
 ""Plugin 'geetarista/ego.vim'
@@ -154,64 +157,36 @@ set nowrapscan
 ""Plugin 'ZoomWin'
 " Bundle 'VisIncr'
 " Bundle 'viewdoc'
-"
 "set clipboard=unnamedplus
-"set showtabline=2
-"map Q gq
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"" Convenient command to see the difference between the current buffer and the
-"" file it was loaded from, thus the changes you made.
-"" Only define it when not defined already.
 "if !exists(":DiffOrig")
 "  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 "		  \ | wincmd p | diffthis
 "endif
-"
 "let maplocalleader = "_"
-"function! ShadowLongLines()
-"  if exists("w:m_hl_ll")
-"    call matchdelete(w:m_hl_ll)
-"    unlet w:m_hl_ll
-"    autocmd! WinEnter * call DoHighlightLL()
-"  endif
-"  unlet! g:line_max_length
-"endfunction
 "set formatoptions+=ntcroq21
-""set nostartofline
-"set nojoinspaces
 "set showfulltag
 "set report=0
 ""set shortmess+=asWAI
-"set showtabline=0
 "set sidescroll=15
-"set fillchars="vert: ,fold: "
-"set foldmethod=syntax
-""set foldnestmax=1
-"set nofoldenable
 "set diffopt=filler,context:3
 "set virtualedit=block
 """ ...but not reset selection with not-shifted special keys
 "set keymodel-=stopsel
 ""set selection=inclusive
-"set updatecount=0
-"color peachpuff
 "com SpaceIndent :set tabstop=4| set shiftwidth=4| set expandtab
 ""com TabIndent :set tabstop=8| set shiftwidth=8| set noexpandtab
 "" 4 space indent by default
 "SpaceIndent
-"gq
+"gq, select all =
 ""vim RETAB + reformat all
 "match ErrorMsg /\s\+$/
-"set history=4096
-"create undodir
-""vim list buffers
-"vim move buffer to tab or window
 "vim clipboards - 2
-"easytags
 "http://www.oualline.com/vim/10/top_10.html
 "https://github.com/xolox/vim-easytags
 "https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
 "https://github.com/spf13/spf13-vim/blob/master/.vimrc
-"https://github.com/scrooloose/nerdcommenter
 "https://github.com/rdnetto/YCM-Generator
-""AT LAST: select all + =
+"http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
+"https://github.com/scrooloose/vimfiles/blob/master/vimrc
+"https://github.com/ets-labs/vimrc/blob/master/vimrc
