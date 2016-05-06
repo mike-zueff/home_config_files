@@ -10,6 +10,7 @@ call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
@@ -135,36 +136,16 @@ set nowrapscan
 "Plug 'tpope/vim-markdown'
 "Plug 'tpope/vim-repeat'
 "Plug 'tpope/vim-surround'
-"Plug 'vim-scripts/ingo-library'
 "Plug 'vim-scripts/visualrepeat'
-"Plug 'wellle/tmux-complete.vim'
-"Plug extended-ft
-"Plug bracketed-paste
-"Plug vimux + vimux-paster
-""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
-""Plugin 'jimenezrick/vimerl.git'
 "Plugin 'scrooloose/nerdcommenter'
 ""Plugin 'tpope/vim-unimpaired'
-""Plugin 'godlygeek/tabular'
 "Plugin 'Valloric/YouCompleteMe'
-"Plugin 'FuzzyFinder'
-"Plugin 'guicolorscheme.vim'
-"Plugin 'xterm16.vim'
-""Plugin 'SuperTab'
-""Plugin 'ZoomWin'
-" Bundle 'VisIncr'
-" Bundle 'viewdoc'
 "set clipboard=unnamedplus
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 "set formatoptions+=ntcroq21
 "set showfulltag
-"set report=0
-"set virtualedit=block
-""" ...but not reset selection with not-shifted special keys
-"set keymodel-=stopsel
-""set selection=inclusive
 "gq, select all =
 ""vim RETAB + reformat all
 "match ErrorMsg /\s\+$/
