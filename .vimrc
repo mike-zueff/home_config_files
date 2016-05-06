@@ -108,6 +108,7 @@ set incsearch
 set laststatus=2
 set mouse=a
 set pastetoggle=<f10>
+set report=0
 set secure
 set shiftwidth=2
 set showcmd
@@ -129,10 +130,8 @@ set nowrapscan
 "vim sort words in line!
 "help what os togglepaste???
 "set textwidth=0
-" Maps for quickfix and location windows (leader-q and leader-l respectively)
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
-"Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-markdown'
 "Plug 'tpope/vim-repeat'
 "Plug 'tpope/vim-surround'
@@ -144,7 +143,6 @@ set nowrapscan
 "Plug vimux + vimux-paster
 ""Plugin 'msanders/snipmate.vim'
 ""Plugin 'Lokaltog/vim-easymotion'
-""Plugin 'geetarista/ego.vim'
 ""Plugin 'jimenezrick/vimerl.git'
 "Plugin 'scrooloose/nerdcommenter'
 ""Plugin 'tpope/vim-unimpaired'
@@ -159,25 +157,14 @@ set nowrapscan
 " Bundle 'viewdoc'
 "set clipboard=unnamedplus
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"if !exists(":DiffOrig")
-"  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-"		  \ | wincmd p | diffthis
-"endif
-"let maplocalleader = "_"
+"command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 "set formatoptions+=ntcroq21
 "set showfulltag
 "set report=0
-""set shortmess+=asWAI
-"set sidescroll=15
-"set diffopt=filler,context:3
 "set virtualedit=block
 """ ...but not reset selection with not-shifted special keys
 "set keymodel-=stopsel
 ""set selection=inclusive
-"com SpaceIndent :set tabstop=4| set shiftwidth=4| set expandtab
-""com TabIndent :set tabstop=8| set shiftwidth=8| set noexpandtab
-"" 4 space indent by default
-"SpaceIndent
 "gq, select all =
 ""vim RETAB + reformat all
 "match ErrorMsg /\s\+$/
