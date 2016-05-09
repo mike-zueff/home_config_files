@@ -46,12 +46,24 @@ let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_invert_tabline=1
 colorscheme gruvbox
 
+" Commands.
+command!-range GSortLine <line1>,<line2>call
+    \ setline(".",join(sort(split(getline(".")," "))," "))
+
 " Functions.
+function!GDiffOrigin()
+  diffthis|vertical new|read #|0d_|diffthis|setlocal buftype=nofile
+endfunction
+
 function!GToggleColorColumnValue()
   if&l:colorcolumn
     setlocal colorcolumn&
   else
-    setlocal colorcolumn=81
+    if&l:filetype!="diff"
+      setlocal colorcolumn=81
+    else
+      setlocal colorcolumn=82
+    endif
   endif
 endfunction
 
@@ -134,12 +146,9 @@ set nowrapscan
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-markdown'
-"Plug 'tpope/vim-repeat'
-"Plug 'tpope/vim-surround'
 "Plug 'vim-scripts/visualrepeat'
 ""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'scrooloose/nerdcommenter'
-""Plugin 'tpope/vim-unimpaired'
 "Plugin 'Valloric/YouCompleteMe'
 "set clipboard=unnamedplus
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -158,3 +167,4 @@ set nowrapscan
 "http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
 "https://github.com/scrooloose/vimfiles/blob/master/vimrc
 "https://github.com/ets-labs/vimrc/blob/master/vimrc
+"at end: gq and all=
