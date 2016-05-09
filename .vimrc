@@ -10,7 +10,7 @@ call plug#begin()
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
@@ -98,6 +98,8 @@ let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
 
 " Key mappings.
+nnoremap j gj
+nnoremap k gk
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
 nnoremap<silent><f4> :NERDTreeToggle<cr>
@@ -109,6 +111,7 @@ nnoremap<f11> :cNext<cr>
 nnoremap<f12> :cnext<cr>
 nnoremap<leader><f11> :lNext<cr>
 nnoremap<leader><f12> :lnext<cr>
+xmap ga <plug>(EasyAlign)
 
 " Enabled options.
 set colorcolumn=81
@@ -140,31 +143,21 @@ set nojoinspaces
 set noswapfile
 set nowrapscan
 " !!! ------------------------------------------------------------------
-"vim sort words in line!
-"help what os togglepaste???
-"set textwidth=0
+"help what os togglepaste??? - vim + terminal
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
-"Plug 'tpope/vim-markdown'
-"Plug 'vim-scripts/visualrepeat'
 ""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'scrooloose/nerdcommenter'
 "Plugin 'Valloric/YouCompleteMe'
 "set clipboard=unnamedplus
 "!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 "set formatoptions+=ntcroq21
 "set showfulltag
 "gq, select all =
-""vim RETAB + reformat all
-"match ErrorMsg /\s\+$/
 "vim clipboards - 2
-"http://www.oualline.com/vim/10/top_10.html
 "https://github.com/xolox/vim-easytags
-"https://github.com/PhilRunninger/my_vim_setup/blob/master/vimrc
-"https://github.com/spf13/spf13-vim/blob/master/.vimrc
 "https://github.com/rdnetto/YCM-Generator
 "http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
-"https://github.com/scrooloose/vimfiles/blob/master/vimrc
-"https://github.com/ets-labs/vimrc/blob/master/vimrc
 "at end: gq and all=
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
