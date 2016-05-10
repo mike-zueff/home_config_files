@@ -6,6 +6,7 @@
 .bash_history
 .bzr.log
 .cache
+.cargo
 .cgdb
 .config/GIMP
 .config/Skype
@@ -39,6 +40,7 @@
 .maildir
 .mozilla
 .mplayer
+.npm
 .nv
 .nvidia-settings-rc
 .pki

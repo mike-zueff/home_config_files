@@ -7,9 +7,11 @@ endif
 
 call plug#begin()
 " Plug 'scrooloose/nerdtree'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
@@ -96,8 +98,12 @@ let g:tagbar_compact=1
 let g:tagbar_indent=0
 let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
+let g:ycm_always_populate_location_list=1
+let g:ycm_global_ycm_extra_conf=
+    \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
 " Key mappings.
+inoremap<expr><cr> pumvisible()?"<c-y>":"<cr>"
 nnoremap j gj
 nnoremap k gk
 nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
@@ -146,18 +152,11 @@ set nowrapscan
 "help what os togglepaste??? - vim + terminal
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
-""Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'scrooloose/nerdcommenter'
-"Plugin 'Valloric/YouCompleteMe'
 "set clipboard=unnamedplus
-"!!! autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "set formatoptions+=ntcroq21
 "set showfulltag
 "gq, select all =
 "vim clipboards - 2
 "https://github.com/xolox/vim-easytags
-"https://github.com/rdnetto/YCM-Generator
-"http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/
 "at end: gq and all=
-"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
