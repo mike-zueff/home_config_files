@@ -12,7 +12,7 @@ function _rc_git_clean_repository_up
   echo git push origin --force --tags
 }
 
-function _rc_git_process_origin
+function _rc_git_pull_origin
 {
   git pull --all
   git pull origin master
