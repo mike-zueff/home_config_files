@@ -6,7 +6,6 @@ if empty(glob("~/.vim"))
 endif
 
 call plug#begin()
-" Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -14,18 +13,21 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
-Plug 'mike-zueff/nerdtree', { 'branch': 'read-only_files_opening_fix' }
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'simeji/winresizer'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
 call plug#end()
 
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
+  call system("touch ~/.vim/.vimtags")
   silent !sed --in-place 452s/4/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   qall
@@ -90,6 +92,13 @@ let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
+
+let g:easytags_async=1
+ let g:easytags_by_filetype=1
+ let g:easytags_dynamic_files=1
+let g:easytags_file="~/.vim/.vimtags"
+let g:easytags_include_members=1
+
 let g:gundo_help=0
 let g:gundo_right=1
 let g:gundo_width=83
@@ -135,8 +144,6 @@ set secure
 set shiftwidth=2
 set showcmd
 set smarttab
-set splitbelow
-set splitright
 set tabstop=2
 set undodir=~/.vim/undodir
 set undofile
@@ -158,5 +165,4 @@ set nowrapscan
 "set showfulltag
 "gq, select all =
 "vim clipboards - 2
-"https://github.com/xolox/vim-easytags
 "at end: gq and all=
