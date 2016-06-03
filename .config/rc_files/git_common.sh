@@ -5,7 +5,6 @@ function _rc_git_clean_repository_up
   git gc --prune=all
   git gc --aggressive --prune=all
 
-  git remote prune upstream
   rm --force --recursive .git/logs
 
   echo git push origin --all --force

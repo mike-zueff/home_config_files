@@ -27,7 +27,6 @@ call plug#end()
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
-  call system("touch ~/.vim/.vimtags")
   silent !sed --in-place 452s/4/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   qall
@@ -92,13 +91,10 @@ let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
-
 let g:easytags_async=1
- let g:easytags_by_filetype=1
- let g:easytags_dynamic_files=1
-let g:easytags_file="~/.vim/.vimtags"
+let g:easytags_auto_highlight=0
+let g:easytags_by_filetype="~/.vim/easytags_by_filetype"
 let g:easytags_include_members=1
-
 let g:gundo_help=0
 let g:gundo_right=1
 let g:gundo_width=83
@@ -160,9 +156,24 @@ set nowrapscan
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
 "Plugin 'scrooloose/nerdcommenter'
-"set clipboard=unnamedplus
 "set formatoptions+=ntcroq21
 "set showfulltag
 "gq, select all =
 "vim clipboards - 2
 "at end: gq and all=
+"set clipboard=unnamed,unnamedplus
+"NeoBundle 'sheerun/vim-polyglot'
+"set hidden
+"set mousemodel=popup
+"noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+"Plugin 'powerman/vim-plugin-ruscmd'
+"" Plugin 'raimondi/delimitmate' " автозакрытие скобок
+"Plugin 'townk/vim-autoclose' "autoclose
+"Plugin 'vasconcelloslf/vim-interestingwords'
+"Plugin 'yggdroot/indentline'
+"Plugin 'Align'
+"Plugin 'mkitt/tabline.vim'
+"Plugin 'mhinz/vim-startify'
+"Plugin 'ervandew/supertab'
+"Plugin 'NLKNguyen/papercolor-theme'
+"" Plugin 'dirkwallenstein/vim-autocomplpop'
