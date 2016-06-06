@@ -114,18 +114,20 @@ let g:ycm_seed_identifiers_with_syntax=1
 inoremap<expr><cr> pumvisible()?"<c-y>":"<cr>"
 nnoremap j gj
 nnoremap k gk
-nnoremap<silent><f2> :call GToggleColorColumnValue()<cr>
-nnoremap<silent><f3> :call GToggleCursorAccentuation()<cr>
-nnoremap<silent><f4> :NERDTreeToggle<cr>
-nnoremap<silent><f5> :TagbarToggle<cr>
-nnoremap<silent><f6> :GundoToggle<cr>
-nnoremap<silent><f7> :tab split<cr>:tabmove<cr>
-nnoremap<f8> :$tabnew<cr>
+nnoremap<silent><f2> :NERDTreeToggle<cr>
+nnoremap<silent><f3> :TagbarToggle<cr>
+nnoremap<silent><f4> :GundoToggle<cr>
+nnoremap<silent><f5> :tab split<cr>:tabmove<cr>
+nnoremap<f6> :$tabnew<cr>
+nnoremap<silent><f7> :call GToggleColorColumnValue()<cr>
+nnoremap<silent><f8> :call GToggleCursorAccentuation()<cr>
+nnoremap<f9> <nop>
 nnoremap<f11> :cNext<cr>
 nnoremap<f12> :cnext<cr>
+nnoremap<leader><f1> :split <c-r>=expand("%:h")<cr><cr>
 nnoremap<leader><f11> :lNext<cr>
 nnoremap<leader><f12> :lnext<cr>
-xmap ga <plug>(EasyAlign)
+xmap<cr> <plug>(EasyAlign)
 
 " Enabled options.
 set colorcolumn=81
@@ -160,18 +162,10 @@ set nowrapscan
 "Plug 'tomtom/tcomment_vim'
 "Plug 'tpope/vim-commentary'
 "Plugin 'scrooloose/nerdcommenter'
-"set formatoptions+=ntcroq21
-"set showfulltag
-"gq, select all =
-"vim clipboards - 2
-"at end: gq and all=
 "set clipboard=unnamed,unnamedplus
-"set hidden
-"set mousemodel=popup
-"noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "plugin vimlint ; do vimlint!
 "install all syntastic linters
 "integrate syntastic with easytags
 "integrate syntastic with YCM
-"integrate YCM with easytags
-"clipboards: firefox <-> urxvt <-> vim (2 buffers)
+"clipboards: firefox <-> urxvt <-> vim <-> vim f10 (buffer paste)
+"clipboards: firefox <-> urxvt <-> vim <-> vim f10 (buffer X)
