@@ -15,7 +15,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 Plug 'simeji/winresizer'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
@@ -83,7 +85,8 @@ endfunction
 " Syntax highlighting.
 highlight Comment ctermfg=156
 
-" Variables.
+" Global variables.
+let g:NERDSpaceDelims=1
 let g:NERDTreeCaseSensitiveSort=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
@@ -98,17 +101,21 @@ let g:easytags_include_members=1
 let g:gundo_help=0
 let g:gundo_right=1
 let g:gundo_width=83
+let g:syntastic_aggregate_errors=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
 let g:tagbar_indent=0
 let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
-let g:ycm_always_populate_location_list=1
 let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_max_diagnostics_to_display=9999
 let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_show_diagnostics_ui=0
 
 " Key mappings.
 inoremap<expr><cr> pumvisible()?"<c-y>":"<cr>"
@@ -121,7 +128,7 @@ nnoremap<silent><f5> :tab split<cr>:tabmove<cr>
 nnoremap<f6> :$tabnew<cr>
 nnoremap<silent><f7> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f8> :call GToggleCursorAccentuation()<cr>
-nnoremap<f9> <nop>
+nnoremap<silent><f9> :SyntasticReset<cr>
 nnoremap<f11> :cNext<cr>
 nnoremap<f12> :cnext<cr>
 nnoremap<leader><f1> :split <c-r>=expand("%:h")<cr><cr>
@@ -157,15 +164,3 @@ set noexrc
 set nojoinspaces
 set noswapfile
 set nowrapscan
-" !!! ------------------------------------------------------------------
-"help what os togglepaste??? - vim + terminal
-"Plug 'tomtom/tcomment_vim'
-"Plug 'tpope/vim-commentary'
-"Plugin 'scrooloose/nerdcommenter'
-"set clipboard=unnamed,unnamedplus
-"plugin vimlint ; do vimlint!
-"install all syntastic linters
-"integrate syntastic with easytags
-"integrate syntastic with YCM
-"clipboards: firefox <-> urxvt <-> vim <-> vim f10 (buffer paste)
-"clipboards: firefox <-> urxvt <-> vim <-> vim f10 (buffer X)
