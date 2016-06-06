@@ -104,8 +104,11 @@ let g:tagbar_indent=0
 let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
 let g:ycm_always_populate_location_list=1
+let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_max_diagnostics_to_display=9999
+let g:ycm_seed_identifiers_with_syntax=1
 
 " Key mappings.
 inoremap<expr><cr> pumvisible()?"<c-y>":"<cr>"
@@ -126,6 +129,7 @@ xmap ga <plug>(EasyAlign)
 
 " Enabled options.
 set colorcolumn=81
+set completeopt-=preview
 set confirm
 set expandtab
 set formatoptions+=j
@@ -162,18 +166,12 @@ set nowrapscan
 "vim clipboards - 2
 "at end: gq and all=
 "set clipboard=unnamed,unnamedplus
-"NeoBundle 'sheerun/vim-polyglot'
 "set hidden
 "set mousemodel=popup
 "noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-"Plugin 'powerman/vim-plugin-ruscmd'
-"" Plugin 'raimondi/delimitmate' " автозакрытие скобок
-"Plugin 'townk/vim-autoclose' "autoclose
-"Plugin 'vasconcelloslf/vim-interestingwords'
-"Plugin 'yggdroot/indentline'
-"Plugin 'Align'
-"Plugin 'mkitt/tabline.vim'
-"Plugin 'mhinz/vim-startify'
-"Plugin 'ervandew/supertab'
-"Plugin 'NLKNguyen/papercolor-theme'
-"" Plugin 'dirkwallenstein/vim-autocomplpop'
+"plugin vimlint ; do vimlint!
+"install all syntastic linters
+"integrate syntastic with easytags
+"integrate syntastic with YCM
+"integrate YCM with easytags
+"clipboards: firefox <-> urxvt <-> vim (2 buffers)
