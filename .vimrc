@@ -142,13 +142,13 @@ nnoremap<silent><f2> :NERDTreeToggle<cr>
 nnoremap<silent><f3> :TagbarToggle<cr>
 nnoremap<silent><f4> :GundoToggle<cr>
 nnoremap<silent><f5> :tab split<cr>:tabmove<cr>
-nnoremap<f6> :$tabnew<cr>
+nnoremap<silent><f6> :$tabnew<cr>
 nnoremap<silent><f7> :call GToggleColorColumnValue()<cr>
 nnoremap<silent><f8> :call GToggleCursorAccentuation()<cr>
 nnoremap<silent><f9> :SyntasticReset<cr>
-nnoremap<f11> :cNext<cr>
-nnoremap<f12> :cnext<cr>
-nnoremap<leader><f1> :split <c-r>=expand("%:h")<cr><cr>
+nnoremap<silent><f11> :cNext<cr>
+nnoremap<silent><f12> :cnext<cr>
+nnoremap<silent><leader><f1> :split <c-r>=expand("%:h")<cr><cr>
 nnoremap<silent><leader><f9> :call GToggleSyntasticPythonVersion()<cr>
 nnoremap<silent><leader><f11> :lNext<cr>
 nnoremap<silent><leader><f12> :lnext<cr>
