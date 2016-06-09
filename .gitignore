@@ -43,6 +43,8 @@
 .nv
 .nvidia-settings-rc
 .pki
+.pylint.d
+.python_history
 .tgdb
 .thumbnails
 .thunderbird

@@ -82,6 +82,20 @@ function!GToggleCursorAccentuation()
   endif
 endfunction
 
+function!GToggleSyntasticPythonVersion()
+  if g:syntastic_python_python_exec=="python"
+    let g:syntastic_python_flake8_exec="python3 flake8"
+    let g:syntastic_python_pylint_exec="python3 pylint"
+    let g:syntastic_python_python_exec="python3"
+    :SyntasticCheck
+  else
+    let g:syntastic_python_flake8_exec="flake8"
+    let g:syntastic_python_pylint_exec="pylint"
+    let g:syntastic_python_python_exec="python"
+    :SyntasticCheck
+  endif
+endfunction
+
 " Syntax highlighting.
 highlight Comment ctermfg=156
 
@@ -106,6 +120,9 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_python_flake8_exec="python3 flake8"
+let g:syntastic_python_pylint_exec="python3 pylint"
+let g:syntastic_python_python_exec="python3"
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
 let g:tagbar_indent=0
@@ -132,6 +149,7 @@ nnoremap<silent><f9> :SyntasticReset<cr>
 nnoremap<f11> :cNext<cr>
 nnoremap<f12> :cnext<cr>
 nnoremap<leader><f1> :split <c-r>=expand("%:h")<cr><cr>
+nnoremap<silent><leader><f9> :call GToggleSyntasticPythonVersion()<cr>
 nnoremap<leader><f11> :lNext<cr>
 nnoremap<leader><f12> :lnext<cr>
 xmap<cr> <plug>(EasyAlign)
