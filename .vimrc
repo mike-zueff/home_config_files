@@ -150,8 +150,8 @@ nnoremap<f11> :cNext<cr>
 nnoremap<f12> :cnext<cr>
 nnoremap<leader><f1> :split <c-r>=expand("%:h")<cr><cr>
 nnoremap<silent><leader><f9> :call GToggleSyntasticPythonVersion()<cr>
-nnoremap<leader><f11> :lNext<cr>
-nnoremap<leader><f12> :lnext<cr>
+nnoremap<silent><leader><f11> :lNext<cr>
+nnoremap<silent><leader><f12> :lnext<cr>
 xmap<cr> <plug>(EasyAlign)
 
 " Enabled options.
