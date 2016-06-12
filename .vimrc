@@ -82,18 +82,19 @@ function!GToggleCursorAccentuation()
   endif
 endfunction
 
-function!GToggleSyntasticPythonVersion()
-  if g:syntastic_python_python_exec=="python"
-    let g:syntastic_python_flake8_exec="python3 flake8"
-    let g:syntastic_python_pylint_exec="python3 pylint"
-    let g:syntastic_python_python_exec="python3"
-    :SyntasticCheck
-  else
+function!GTogglePythonVersion()
+  if g:syntastic_python_flake8_exec!="flake8"
     let g:syntastic_python_flake8_exec="flake8"
     let g:syntastic_python_pylint_exec="pylint"
     let g:syntastic_python_python_exec="python"
-    :SyntasticCheck
+    let g:ycm_python_binary_path="/usr/bin/python"
+  else
+    let g:syntastic_python_flake8_exec="python3 flake8"
+    let g:syntastic_python_pylint_exec="python3 pylint"
+    let g:syntastic_python_python_exec="python3"
+    let g:ycm_python_binary_path="/usr/bin/python3"
   endif
+  :SyntasticCheck
 endfunction
 
 " Syntax highlighting.
@@ -131,6 +132,7 @@ let g:winresizer_vert_resize=1
 let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_python_binary_path="/usr/bin/python3"
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_show_diagnostics_ui=0
 
@@ -149,7 +151,7 @@ nnoremap<silent><f9> :SyntasticReset<cr>
 nnoremap<silent><f11> :cNext<cr>
 nnoremap<silent><f12> :cnext<cr>
 nnoremap<silent><leader><f1> :split <c-r>=expand("%:h")<cr><cr>
-nnoremap<silent><leader><f9> :call GToggleSyntasticPythonVersion()<cr>
+nnoremap<silent><leader><f9> :call GTogglePythonVersion()<cr>
 nnoremap<silent><leader><f11> :lNext<cr>
 nnoremap<silent><leader><f12> :lnext<cr>
 xmap<cr> <plug>(EasyAlign)
