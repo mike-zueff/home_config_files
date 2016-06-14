@@ -107,6 +107,7 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeShowHidden=1
 let g:airline_powerline_fonts=1
 let g:ctrlp_cache_dir="~/.vim/ctrlp"
+let g:ctrlp_max_depth=9999
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
 let g:easytags_async=1
