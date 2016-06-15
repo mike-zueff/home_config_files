@@ -14,7 +14,7 @@ function _rc_mediawiki_back_up
     php /var/www/localhost/htdocs/mediawiki/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_dump.xml.xz
     sudo tar --create --directory /var/www/localhost/htdocs mediawiki | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_srv.tar.xz
 
-    [[ `ls ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} | wc --lines` -ge 31 ]] && find ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} -maxdepth 1 -mindepth 1 -mtime +100 -exec rm --force --recursive {} +
+    [[ `ls ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} | wc --lines` -ge 31 ]] && find ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} -maxdepth 1 -mindepth 1 -mtime +200 -exec rm --force --recursive {} +
 
     mc ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
   fi
