@@ -52,7 +52,7 @@ let g:gruvbox_invert_tabline=1
 colorscheme gruvbox
 
 " Commands.
-command!-range GSortLine <line1>,<line2>call
+command!GSortWordsInLine call
     \ setline(".",join(sort(split(getline(".")," "))," "))
 
 " Functions.
