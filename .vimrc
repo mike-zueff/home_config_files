@@ -155,7 +155,7 @@ nnoremap<silent><leader><f1> :split <c-r>=expand("%:h")<cr><cr>
 nnoremap<silent><leader><f9> :call GTogglePythonVersion()<cr>
 nnoremap<silent><leader><f11> :lNext<cr>
 nnoremap<silent><leader><f12> :lnext<cr>
-xmap<cr> <plug>(EasyAlign)
+xmap<silent><cr> <plug>(EasyAlign)
 
 " Enabled options.
 set colorcolumn=81
