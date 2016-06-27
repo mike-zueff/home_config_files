@@ -30,8 +30,6 @@ call plug#end()
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
-  silent !sed --in-place 452s/4/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
-  silent !sed --in-place 89s/234/0/ ~/.vim/plugged/gruvbox/colors/gruvbox.vim
   qall
 endif
 
@@ -100,6 +98,7 @@ endfunction
 
 " Syntax highlighting.
 highlight Comment ctermfg=156
+highlight Normal ctermbg=0
 
 " Global variables.
 let g:NERDSpaceDelims=1
@@ -135,6 +134,7 @@ let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_python_binary_path="/usr/bin/python3"
+let g:ycm_rust_src_path="/usr/src/rust"
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_show_diagnostics_ui=0
 
@@ -152,7 +152,7 @@ nnoremap<silent><f8> :call GToggleCursorAccentuation()<cr>
 nnoremap<silent><f9> :SyntasticReset<cr>
 nnoremap<silent><f11> :cNext<cr>
 nnoremap<silent><f12> :cnext<cr>
-nnoremap<silent><leader><f1> :split <c-r>=expand("%:h")<cr><cr>
+nnoremap<silent><leader><f1> :split <c-r>=glob("%:h")<cr><cr>
 nnoremap<silent><leader><f9> :call GTogglePythonVersion()<cr>
 nnoremap<silent><leader><f11> :lNext<cr>
 nnoremap<silent><leader><f12> :lnext<cr>
