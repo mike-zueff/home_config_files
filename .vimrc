@@ -14,6 +14,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -98,6 +99,8 @@ endfunction
 
 " Syntax highlighting.
 highlight Comment ctermfg=156
+highlight IndentGuidesEven ctermbg=237
+highlight IndentGuidesOdd ctermbg=235
 highlight Normal ctermbg=0
 
 " Global variables.
@@ -156,7 +159,7 @@ nnoremap<silent><leader><f1> :split <c-r>=glob("%:h")<cr><cr>
 nnoremap<silent><leader><f9> :call GTogglePythonVersion()<cr>
 nnoremap<silent><leader><f11> :lNext<cr>
 nnoremap<silent><leader><f12> :lnext<cr>
-xmap<silent><cr> <plug>(EasyAlign)
+xmap<cr> <plug>(EasyAlign)
 
 " Enabled options.
 set colorcolumn=81
