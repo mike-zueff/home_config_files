@@ -43,6 +43,7 @@ autocmd FileType help setlocal colorcolumn&
 autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
 autocmd FileType tagbar setlocal colorcolumn&
+autocmd FileType text setlocal textwidth=0
 autocmd FileType vim-plug setlocal colorcolumn&
 autocmd VimResized * execute "normal\<c-w>="
 
@@ -179,7 +180,6 @@ set shiftwidth=2
 set showcmd
 set smarttab
 set tabstop=2
-set textwidth=0
 set undodir=~/.vim/undodir
 set undofile
 set updatetime=1000
