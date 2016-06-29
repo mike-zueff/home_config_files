@@ -179,6 +179,7 @@ set shiftwidth=2
 set showcmd
 set smarttab
 set tabstop=2
+set textwidth=0
 set undodir=~/.vim/undodir
 set undofile
 set updatetime=1000
