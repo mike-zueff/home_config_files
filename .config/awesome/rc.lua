@@ -98,13 +98,13 @@ myawesomemenu = {
 }
 
 mysoundmenu = {
-    { "cans, 1/2", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 50") end },
-    { "cans, 1/3", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 33") end },
-    { "cans, 1/4", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 25") end },
-    { "cans, 1/5", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 20") end },
-    { "cans, 1/6", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 17") end },
-    { "cans, 1/7", function () awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 14") end },
-    { "defaults", function () awful.util.spawn_with_shell("bash -i " .. awful.util.getdir("config") .. "/menu_sound_defaults.sh") end }
+    { "cans, 1/2", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 50") end },
+    { "cans, 1/3", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 33") end },
+    { "cans, 1/4", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 25") end },
+    { "cans, 1/5", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 20") end },
+    { "cans, 1/6", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 17") end },
+    { "cans, 1/7", function() awful.util.spawn_with_shell("bash " .. awful.util.getdir("config") .. "/menu_sound_cans.sh 14") end },
+    { "defaults", function() awful.util.spawn_with_shell("bash -i " .. awful.util.getdir("config") .. "/menu_sound_defaults.sh") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -286,13 +286,13 @@ globalkeys = awful.util.table.join(
     --]]
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
-    awful.key({ modkey }, "KP_Add", function()
+    awful.key({ modkey }, "KP_Add", function ()
       local selected_tag = awful.tag.selected()
 
       for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = false end
     end),
     awful.key({ modkey }, "KP_Enter", function() awful.util.spawn_with_shell("xscreensaver-command -lock") end),
-    awful.key({ modkey }, "KP_Subtract", function()
+    awful.key({ modkey }, "KP_Subtract", function ()
       local selected_tag = awful.tag.selected()
 
       for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = true end

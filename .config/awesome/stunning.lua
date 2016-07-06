@@ -25,5 +25,10 @@ function execute_once(process_name, argv, launcher)
 end
 
 awful.util.spawn_with_shell("nitrogen --restore")
+
+mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
+  awful.util.spawn_with_shell(terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "/calendar.sh")
+end)))
+
 execute_once("dex", "--autostart")
 execute_once("goldendict")
