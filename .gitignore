@@ -11,6 +11,7 @@
 .config/GIMP
 .config/Skype
 .config/Trolltech.conf
+.config/autostart/upwork.desktop
 .config/calibre
 .config/dconf
 .config/eog
