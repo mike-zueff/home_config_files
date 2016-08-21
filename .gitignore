@@ -41,6 +41,7 @@
 .maildir
 .mozilla
 .mplayer
+.npm
 .nv
 .nvidia-settings-rc
 .pki
