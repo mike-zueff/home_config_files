@@ -13,6 +13,7 @@
 .config/Trolltech.conf
 .config/autostart/upwork.desktop
 .config/calibre
+.config/cef_user_data/Dictionaries/en-US-6-1.bdic
 .config/dconf
 .config/eog
 .config/freshwrapper-data
