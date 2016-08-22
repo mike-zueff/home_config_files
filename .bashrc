@@ -17,7 +17,7 @@ fi
 
 # Put your fun stuff here.
 
-PATH=${PATH}:/opt/cargo_bin
+PATH=${PATH}:/opt/cargo_bin:/usr/sbin
 
 cd /tmp
 
