@@ -17,11 +17,14 @@ fi
 
 # Put your fun stuff here.
 
+cd /tmp || exit
+
 PATH=${PATH}:/opt/cargo_bin:/usr/sbin
 
-cd /tmp
+export BC_ENV_ARGS=~/.config/bcrc
 
-for FILE in `ls ~/.config/rc_files`
+for FILE in ~/.config/rc_files/*
 do
-  . ~/.config/rc_files/${FILE}
+  # shellcheck source=/dev/null
+  . ${FILE}
 done
