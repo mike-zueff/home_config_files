@@ -21,11 +21,13 @@
 .config/eog
 .config/freshwrapper-data
 .config/gconf
+.config/google-chrome
 .config/gtk-2.0
 .config/gtk-3.0/bookmarks
 .config/htop
 .config/libreoffice
 .config/mc
+.config/menus/applications-merged/xdg-desktop-menu-dummy.menu
 .config/mimeapps.list
 .config/nitrogen
 .config/pavucontrol.ini
@@ -38,6 +40,7 @@
 .dbus
 .dmrc
 .gksu.lock
+.gnome/apps/*.desktop
 .gnupg
 .goldendict
 .kde4
