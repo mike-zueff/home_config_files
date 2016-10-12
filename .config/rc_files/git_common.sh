@@ -7,8 +7,8 @@ function _rc_git_clean_repository_up
 
   rm --force --recursive .git/logs
 
-  echo git push origin --all --force
-  echo git push origin --force --tags
+  git push origin --all --force
+  git push origin --force --tags
 }
 
 function _rc_git_pull_origin
