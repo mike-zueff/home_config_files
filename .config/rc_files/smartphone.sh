@@ -13,7 +13,7 @@ function _rc_smartphone_back_up
     _rc_smartphone_mount
     sleep 5
     echo "Going to execute tar."
-    tar --create --directory ~/mnt/xperia_z3+_dual "Internal storage" | xz --best > ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/internal_storage.tar.xz
+    tar --create --directory ~/mnt/xperia_z3+_dual "Internal shared storage" | xz --best > ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/internal_shared_storage.tar.xz
     _rc_smartphone_umount
     sleep 5
     adb devices
