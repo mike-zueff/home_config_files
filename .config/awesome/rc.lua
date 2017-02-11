@@ -38,10 +38,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -64,7 +64,7 @@ awful.layout.layouts = {
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
@@ -91,15 +91,22 @@ end
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() return false, hotkeys_popup.show_help end},
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end}
+}
+
+mysoundmenu = {
+    { "cans, 1/2", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 50") end },
+    { "cans, 1/3", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 33") end },
+    { "cans, 1/4", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 25") end },
+    { "cans, 1/5", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end },
+    { "cans, 1/6", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end },
+    { "cans, 1/7", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end },
+    { "defaults", function() awful.spawn.with_shell("bash -i " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "sound", mysoundmenu, "/usr/share/icons/Tango/scalable/devices/audio-card.svg" },
+                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_datebook.sh" }
                                   }
                         })
 
@@ -115,7 +122,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" %b %d, %a, %H:%M ", 1)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
@@ -173,17 +180,21 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_wallpaper)
+-- screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
-    set_wallpaper(s)
+    -- set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    if s ~= 2 then
+        awful.tag({ " α", " β", " γ", " δ", " ε", " ζ" }, s, awful.layout.layouts[6])
+    else
+        awful.tag({ " η", " θ", " ι", " κ", " λ", " μ" }, s, awful.layout.layouts[6])
+    end
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    s.mypromptbox = awful.widget.prompt({ prompt = "$ " })
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -281,8 +292,8 @@ globalkeys = awful.util.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+    -- awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+              -- {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -316,6 +327,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
+    --[[
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
@@ -326,9 +338,21 @@ globalkeys = awful.util.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
+    --]]
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "KP_Add", function ()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = false end
+    end),
+    awful.key({ modkey }, "KP_Enter", function() awful.spawn.with_shell("xscreensaver-command -lock") end),
+    awful.key({ modkey }, "KP_Subtract", function ()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = true end
+    end)
 )
 
 clientkeys = awful.util.table.join(
@@ -466,7 +490,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -543,3 +567,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+dofile(awful.util.getdir("config") .. "stunning.lua")
