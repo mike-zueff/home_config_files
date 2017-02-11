@@ -13,21 +13,21 @@ function execute_once(process_name, argv, launcher)
   end
 
   if argv then
-    awful.util.spawn_with_shell("pgrep --euid ${USER} --exact '" .. process_name .. " " .. argv .. "' --full || (" .. launcher .. " " .. argv .. " &)")
+    awful.spawn.with_shell("pgrep --euid ${USER} --exact '" .. process_name .. " " .. argv .. "' --full || (" .. launcher .. " " .. argv .. " &)")
   else
-    awful.util.spawn_with_shell("pgrep --euid ${USER} --exact '" .. process_name .. "' --full || (" .. launcher .. " &)")
+    awful.spawn.with_shell("pgrep --euid ${USER} --exact '" .. process_name .. "' --full || (" .. launcher .. " &)")
   end
 
   if process_name == "dex" then
-    awful.util.spawn_with_shell("mkdir --parents " .. awesome_run_time_directory)
-    awful.util.spawn_with_shell("touch " .. awesome_run_time_directory .. "/" .. awesome_dex_lock_file)
+    awful.spawn.with_shell("mkdir --parents " .. awesome_run_time_directory)
+    awful.spawn.with_shell("touch " .. awesome_run_time_directory .. "/" .. awesome_dex_lock_file)
   end
 end
 
-awful.util.spawn_with_shell("nitrogen --restore")
+awful.spawn.with_shell("nitrogen --restore")
 
 mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
-  awful.util.spawn_with_shell(terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "/calendar.sh")
+  awful.spawn.with_shell(terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "calendar.sh")
 end)))
 
 execute_once("dex", "--autostart")
