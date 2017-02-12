@@ -187,7 +187,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    if s ~= 2 then
+    if s.index < 2 then
         awful.tag({ " α", " β", " γ", " δ", " ε", " ζ" }, s, awful.layout.layouts[6])
     else
         awful.tag({ " η", " θ", " ι", " κ", " λ", " μ" }, s, awful.layout.layouts[6])
