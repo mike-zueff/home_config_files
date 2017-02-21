@@ -17,9 +17,9 @@ fi
 
 # Put your fun stuff here.
 
-cd /tmp || exit
+cd /tmp/volatile || exit
 
-PATH=${PATH}:/opt/cargo_bin:/usr/sbin
+PATH=${PATH}:/usr/sbin
 
 export BC_ENV_ARGS=~/.config/bcrc
 

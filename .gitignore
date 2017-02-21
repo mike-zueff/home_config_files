@@ -1,8 +1,8 @@
 .Skype
 .TelegramDesktop
-.Upwork
 .VirtualBox
 .Xauthority
+.adobe
 .android
 .awesome-errors
 .bash_history
@@ -16,7 +16,6 @@
 .config/Skype
 .config/Trolltech.conf
 .config/VirtualBox
-.config/autostart/upwork.desktop
 .config/calibre
 .config/cef_user_data/Dictionaries
 .config/dconf
@@ -49,6 +48,7 @@
 .lesshst
 .links
 .local
+.macromedia
 .maildir
 .mozilla
 .mplayer
