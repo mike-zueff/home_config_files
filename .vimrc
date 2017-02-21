@@ -23,10 +23,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'simeji/winresizer'
 Plug 'sjl/gundo.vim'
+Plug 'syngan/vim-vimlint'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
+Plug 'ynkdir/vim-vimlparser'
 call plug#end()
 
 if exists("g:vimrc_is_bundle_installation_required")
@@ -140,7 +142,7 @@ let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_python_binary_path="/usr/bin/python3"
-let g:ycm_rust_src_path="/usr/share/rust-1.12.1/src"
+let g:ycm_rust_src_path="/usr/src/rust"
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_show_diagnostics_ui=0
 
