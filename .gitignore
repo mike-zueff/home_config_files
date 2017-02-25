@@ -1,4 +1,3 @@
-.Skype
 .TelegramDesktop
 .VirtualBox
 .Xauthority
@@ -13,7 +12,6 @@
 .cgdb
 .config/GIMP
 .config/Paralect
-.config/Skype
 .config/Trolltech.conf
 .config/VirtualBox
 .config/calibre
@@ -36,6 +34,7 @@
 .config/pychess
 .config/rc_files/mediawiki_credentials.sh
 .config/robomongo
+.config/skypeforlinux
 .config/smplayer
 .config/wireshark
 .dbus
