@@ -16,6 +16,7 @@
 .config/VirtualBox
 .config/calibre
 .config/cef_user_data/Dictionaries
+.config/configstore/update-notifier-npm.json
 .config/dconf
 .config/eog
 .config/freshwrapper-data
