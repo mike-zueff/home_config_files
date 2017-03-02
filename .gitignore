@@ -18,6 +18,7 @@
 .config/cef_user_data/Dictionaries
 .config/configstore/update-notifier-npm.json
 .config/dconf
+.config/deluge
 .config/eog
 .config/freshwrapper-data
 .config/gconf
