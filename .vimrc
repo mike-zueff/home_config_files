@@ -9,6 +9,7 @@ call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'benmills/vimux'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
