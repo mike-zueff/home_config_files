@@ -1,3 +1,4 @@
 altscreen on
+defscrollback 99999
 hardstatus alwayslastline "%{= gk}[screen]%=[%w]"
 term rxvt-unicode-256color

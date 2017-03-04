@@ -11,7 +11,7 @@ URxvt*iconFile: /usr/share/icons/Tango/scalable/apps/utilities-terminal.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
 URxvt*perl-ext-common: default,confirm-paste,selection-to-clipboard
-URxvt*saveLines: 100000
+URxvt*saveLines: 99999
 URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
 Xcursor.size: 24
