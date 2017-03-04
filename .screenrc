@@ -1,4 +1,3 @@
 altscreen on
-backtick 0 0 0 whoami
-hardstatus alwayslastline "%{b gk}[screen] [%`]%=[%w]"
+hardstatus alwayslastline "%{= gk}[screen]%=[%w]"
 term rxvt-unicode-256color
