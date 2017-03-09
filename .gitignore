@@ -13,11 +13,13 @@
 .config/Paralect
 .config/Trolltech.conf
 .config/VirtualBox
+.config/autostart
 .config/calibre
 .config/cef_user_data/Dictionaries
 .config/configstore/update-notifier-npm.json
 .config/dconf
 .config/deluge
+.config/enchant
 .config/eog
 .config/freshwrapper-data
 .config/gconf
@@ -65,6 +67,7 @@
 .vim
 .viminfo
 .wget-hsts
+.xneur
 .xscreensaver
 .xsession-errors
 .xsession-errors.old
