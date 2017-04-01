@@ -2,7 +2,7 @@
 # /home/ramesses/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Sat Apr  1 12:06:42 2017
+# Generated on Sat Apr  1 12:10:41 2017
 #
 
 # ConfigProperties:
@@ -27,7 +27,7 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 0/AllowFlipping=1
 0/FSAAAppControlled=1
 0/LogAnisoAppControlled=1
-0/OpenGLImageSettings=1
+0/OpenGLImageSettings=0
 0/FSAAAppEnhanced=0
 [DPY:DVI-I-0]/Dithering=0
 [DPY:DVI-I-0]/DitheringMode=0
