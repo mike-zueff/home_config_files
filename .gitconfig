@@ -1,5 +1,5 @@
 [credential]
-	helper = cache --timeout=3600
+	helper = /usr/bin/git-credential-gnome-keyring
 [user]
 	email = mike.zueff@gmail.com
 	name = Mike Zueff

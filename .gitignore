@@ -59,6 +59,8 @@
 .pki
 .pylint.d
 .python_history
+.ssh/id_rsa
+.ssh/id_rsa.pub
 .tgdb
 .thumbnails
 .thunderbird
