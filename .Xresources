@@ -18,6 +18,7 @@ Xcursor.size: 24
 Xcursor.theme: Vanilla-DMZ
 Xft.antialias: true
 Xft.autohint: false
+Xft.dpi: 95
 Xft.hinting: false
 Xft.hintstyle: hintnone
 Xft.lcdfilter: lcddefault

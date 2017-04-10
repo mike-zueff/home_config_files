@@ -1,5 +1,5 @@
 [credential]
-	helper = /usr/bin/git-credential-gnome-keyring
+	helper = /usr/bin/git-credential-libsecret
 [user]
 	email = mike.zueff@gmail.com
 	name = Mike Zueff

@@ -27,11 +27,15 @@
 .config/gtk-2.0
 .config/gtk-3.0/bookmarks
 .config/htop
+.config/kactivitymanagerdrc
+.config/kdeglobals
 .config/libreoffice
 .config/mc
 .config/menus/applications-merged/xdg-desktop-menu-dummy.menu
 .config/mimeapps.list
 .config/nitrogen
+.config/okularpartrc
+.config/okularrc
 .config/pavucontrol.ini
 .config/pulse
 .config/pychess
@@ -75,6 +79,5 @@
 Calibre Library
 Downloads
 dump
-lingvo
 mnt
 wallpapers
