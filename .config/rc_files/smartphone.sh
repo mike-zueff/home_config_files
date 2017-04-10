@@ -27,7 +27,7 @@ function _rc_smartphone_back_up
     xz --best ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/android.ab
     xzcat ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/android.ab.xz | dd ibs=24 skip=1 | openssl zlib -d | xz --best > ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/android.tar.xz
 
-    [[ `ls ${_RC_SMARTPHONE_BACKUPS_DIRECTORY} | wc --lines` -ge 31 ]] && find ${_RC_SMARTPHONE_BACKUPS_DIRECTORY} -maxdepth 1 -mindepth 1 -mtime +200 -exec rm --force --recursive {} +
+    _util_clear_old_backups ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}
 
     mc ${_RC_SMARTPHONE_BACKUPS_DIRECTORY} ${_RC_SMARTPHONE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
   fi
