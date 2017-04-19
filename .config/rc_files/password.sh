@@ -16,8 +16,8 @@ _rc_password_generate()
       while true
       do
         local CHARACTER
-        CHARACTER=$(dd bs=1 count=1 if=/dev/urandom status=none | tr \
-            --complement --delete [:${REGEX}:])
+        CHARACTER="$(dd bs=1 count=1 if=/dev/urandom status=none | tr \
+            --complement --delete [:${REGEX}:])"
 
         if [[ ${#CHARACTER} -eq 1 ]]
         then
@@ -25,7 +25,7 @@ _rc_password_generate()
 
           for J in "${ELEMENTS[@]}"
           do
-            if [[ ${J} == "${CHARACTER}" ]]
+            if [[ "${J}" == "${CHARACTER}" ]]
             then
               IS_IN_ARRAY=1
               break
@@ -34,13 +34,13 @@ _rc_password_generate()
 
           if [[ ${IS_IN_ARRAY} -eq 0 ]]
           then
-            ELEMENTS+=(${CHARACTER})
+            ELEMENTS+=("${CHARACTER}")
             break
           fi
         fi
       done
 
-      PASSWORD=${PASSWORD}${CHARACTER}
+      PASSWORD="${PASSWORD}${CHARACTER}"
     done
 
     echo "${PASSWORD}"
