@@ -190,13 +190,13 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     if s.index < 2 then
-        awful.tag({ " α", " β", " γ", " δ", " ε", " ζ" }, s, awful.layout.layouts[6])
+        awful.tag({ "α", "β", "γ", "δ", "ε", "ζ" }, s, awful.layout.layouts[6])
     else
-        awful.tag({ " η", " θ", " ι", " κ", " λ", " μ" }, s, awful.layout.layouts[6])
+        awful.tag({ "η", "θ", "ι", "κ", "λ", "μ" }, s, awful.layout.layouts[6])
     end
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt({ prompt = "$ " })
+    s.mypromptbox = awful.widget.prompt({ prompt = " $ " })
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
