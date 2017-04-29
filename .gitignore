@@ -14,7 +14,6 @@
 .config/Trolltech.conf
 .config/VirtualBox
 .config/autostart
-.config/calibre
 .config/cef_user_data/Dictionaries
 .config/configstore/update-notifier-npm.json
 .config/dconf
@@ -46,6 +45,7 @@
 .config/wireshark
 .dbus
 .dmrc
+.electrum
 .gksu.lock
 .gnome/apps/*.desktop
 .gnupg
@@ -76,7 +76,6 @@
 .xscreensaver
 .xsession-errors
 .xsession-errors.old
-Calibre Library
 Downloads
 dump
 mnt
