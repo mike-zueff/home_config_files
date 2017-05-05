@@ -14,6 +14,7 @@
 .config/Trolltech.conf
 .config/VirtualBox
 .config/autostart
+.config/awesome/default_keyring_password
 .config/cef_user_data/Dictionaries
 .config/configstore/update-notifier-npm.json
 .config/dconf
