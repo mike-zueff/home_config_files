@@ -3,7 +3,9 @@
 import gnomekeyring, os, time
 
 time.sleep(10)
-gnomekeyring.unlock_sync(None, open("default_keyring_password").read()[:-1])
+
+gnomekeyring.unlock_sync(None, open(os.environ["HOME"] +
+    "/.config/awesome/default_keyring_password").read()[:-1])
 
 os.system("notify-send --icon=/usr/share/icons/Tango/scalable/apps/utilities-" \
     "terminal.svg Keyring 'Default keyring has been unlocked.'")
