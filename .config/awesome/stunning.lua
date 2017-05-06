@@ -31,5 +31,5 @@ mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
 end)))
 
 execute_once("dex", "--autostart")
-awful.spawn.with_shell(awful.util.getdir("config") .. "default_keyring_unlocker.py")
+awful.spawn.with_shell(awful.util.getdir("config") .. "default_keyring_unlocker")
 execute_once("goldendict")
