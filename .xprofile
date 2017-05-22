@@ -2,6 +2,8 @@ xrdb -merge /etc/X11/Xresources
 
 xrdb -merge ${HOME}/.Xresources
 
+xiccd &
+
 nitrogen --restore
 
 numlockx
