@@ -2,16 +2,16 @@
 
 sleep 5
 
-DISPLAY_PRIMARY=$(colormgr find-device-by-property Model "DELL U2412M" | awk 'BEGIN { FS=": *" } /^Device ID: / { print $2 }')
 DISPLAY_SECONDARY=$(colormgr find-device-by-property Model "DELL U2312HM" | awk 'BEGIN { FS=": *" } /^Device ID: / { print $2 }')
-
-colormgr import-profile /private/icc_profiles/dell_u2412m_standard.icc
-PROFILE_PRIMARY=$(colormgr find-profile-by-filename dell_u2412m_standard.icc | awk 'BEGIN { FS=": *" } /^Profile ID: / { print $2 }')
+DISPLAY_PRIMARY=$(colormgr find-device-by-property Model "DELL U2412M" | awk 'BEGIN { FS=": *" } /^Device ID: / { print $2 }')
 
 colormgr import-profile /private/icc_profiles/dell_u2312hm_standard.icc
 PROFILE_SECONDARY=$(colormgr find-profile-by-filename dell_u2312hm_standard.icc | awk 'BEGIN { FS=": *" } /^Profile ID: / { print $2 }')
 
-colormgr device-add-profile "${DISPLAY_PRIMARY}" "${PROFILE_PRIMARY}"
+colormgr import-profile /private/icc_profiles/dell_u2412m_standard.icc
+PROFILE_PRIMARY=$(colormgr find-profile-by-filename dell_u2412m_standard.icc | awk 'BEGIN { FS=": *" } /^Profile ID: / { print $2 }')
+
 colormgr device-add-profile "${DISPLAY_SECONDARY}" "${PROFILE_SECONDARY}"
+colormgr device-add-profile "${DISPLAY_PRIMARY}" "${PROFILE_PRIMARY}"
 
 notify-send --icon=/usr/share/icons/Tango/scalable/apps/utilities-terminal.svg colord "ICC profiles have been added."
