@@ -17,6 +17,7 @@
 .config/awesome/default_keyring_password
 .config/cef_user_data/Dictionaries
 .config/configstore/update-notifier-npm.json
+.config/d-feet
 .config/dconf
 .config/deluge
 .config/enchant
