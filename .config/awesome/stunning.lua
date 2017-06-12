@@ -24,6 +24,7 @@ function execute_once(process_name, argv, launcher)
   end
 end
 
+awful.spawn.with_shell("killall --exact \"goldendict\"")
 awful.spawn.with_shell("nitrogen --restore")
 
 mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
