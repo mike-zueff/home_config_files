@@ -15627,8 +15627,8 @@ state.XFi {
 	control.1026 {
 		iface MIXER
 		name 'Master Playback Volume'
-		value.0 256
-		value.1 256
+		value.0 88
+		value.1 88
 		comment {
 			access 'read write'
 			type INTEGER
@@ -15636,8 +15636,8 @@ state.XFi {
 			range '0 - 256'
 			dbmin -9999999
 			dbmax 0
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 -4200
+			dbvalue.1 -4200
 		}
 	}
 	control.1027 {
@@ -15990,7 +15990,7 @@ state.XFi {
 	control.1053 {
 		iface MIXER
 		name 'Analog Output Playback Enum'
-		value Speakers
+		value Headphones
 		comment {
 			access 'read write'
 			type ENUMERATED
@@ -16146,6 +16146,18 @@ state.PCH {
 	}
 	control.11 {
 		iface MIXER
+		name 'Loopback Mixing'
+		value Enabled
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Disabled
+			item.1 Enabled
+		}
+	}
+	control.12 {
+		iface MIXER
 		name 'Front Mic Playback Volume'
 		value.0 0
 		value.1 0
@@ -16160,7 +16172,7 @@ state.PCH {
 			dbvalue.1 -3450
 		}
 	}
-	control.12 {
+	control.13 {
 		iface MIXER
 		name 'Front Mic Playback Switch'
 		value.0 false
@@ -16171,7 +16183,7 @@ state.PCH {
 			count 2
 		}
 	}
-	control.13 {
+	control.14 {
 		iface MIXER
 		name 'Rear Mic Playback Volume'
 		value.0 0
@@ -16187,7 +16199,7 @@ state.PCH {
 			dbvalue.1 -3450
 		}
 	}
-	control.14 {
+	control.15 {
 		iface MIXER
 		name 'Rear Mic Playback Switch'
 		value.0 false
@@ -16198,7 +16210,7 @@ state.PCH {
 			count 2
 		}
 	}
-	control.15 {
+	control.16 {
 		iface MIXER
 		name 'Line Playback Volume'
 		value.0 0
@@ -16214,7 +16226,7 @@ state.PCH {
 			dbvalue.1 -3450
 		}
 	}
-	control.16 {
+	control.17 {
 		iface MIXER
 		name 'Line Playback Switch'
 		value.0 false
@@ -16225,7 +16237,7 @@ state.PCH {
 			count 2
 		}
 	}
-	control.17 {
+	control.18 {
 		iface MIXER
 		name 'Auto-Mute Mode'
 		value Enabled
@@ -16237,7 +16249,7 @@ state.PCH {
 			item.1 Enabled
 		}
 	}
-	control.18 {
+	control.19 {
 		iface MIXER
 		name 'Input Source'
 		value 'Rear Mic'
@@ -16250,7 +16262,7 @@ state.PCH {
 			item.2 Line
 		}
 	}
-	control.19 {
+	control.20 {
 		iface MIXER
 		name 'Input Source'
 		index 1
@@ -16264,7 +16276,7 @@ state.PCH {
 			item.2 Line
 		}
 	}
-	control.20 {
+	control.21 {
 		iface MIXER
 		name 'Capture Volume'
 		value.0 63
@@ -16280,7 +16292,7 @@ state.PCH {
 			dbvalue.1 3000
 		}
 	}
-	control.21 {
+	control.22 {
 		iface MIXER
 		name 'Capture Switch'
 		value.0 true
@@ -16291,7 +16303,7 @@ state.PCH {
 			count 2
 		}
 	}
-	control.22 {
+	control.23 {
 		iface MIXER
 		name 'Capture Volume'
 		index 1
@@ -16308,7 +16320,7 @@ state.PCH {
 			dbvalue.1 -1725
 		}
 	}
-	control.23 {
+	control.24 {
 		iface MIXER
 		name 'Capture Switch'
 		index 1
@@ -16320,7 +16332,7 @@ state.PCH {
 			count 2
 		}
 	}
-	control.24 {
+	control.25 {
 		iface MIXER
 		name 'Front Mic Boost Volume'
 		value.0 0
@@ -16336,11 +16348,11 @@ state.PCH {
 			dbvalue.1 0
 		}
 	}
-	control.25 {
+	control.26 {
 		iface MIXER
 		name 'Rear Mic Boost Volume'
-		value.0 3
-		value.1 3
+		value.0 2
+		value.1 2
 		comment {
 			access 'read write'
 			type INTEGER
@@ -16348,11 +16360,11 @@ state.PCH {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3000
-			dbvalue.0 3000
-			dbvalue.1 3000
+			dbvalue.0 2000
+			dbvalue.1 2000
 		}
 	}
-	control.26 {
+	control.27 {
 		iface MIXER
 		name 'Line Boost Volume'
 		value.0 0
@@ -16368,7 +16380,7 @@ state.PCH {
 			dbvalue.1 0
 		}
 	}
-	control.27 {
+	control.28 {
 		iface MIXER
 		name 'IEC958 Playback Con Mask'
 		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -16378,7 +16390,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.28 {
+	control.29 {
 		iface MIXER
 		name 'IEC958 Playback Pro Mask'
 		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -16388,7 +16400,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.29 {
+	control.30 {
 		iface MIXER
 		name 'IEC958 Playback Default'
 		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
@@ -16398,7 +16410,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.30 {
+	control.31 {
 		iface MIXER
 		name 'IEC958 Playback Switch'
 		value true
@@ -16408,7 +16420,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.31 {
+	control.32 {
 		iface MIXER
 		name 'IEC958 Default PCM Playback Switch'
 		value false
@@ -16418,7 +16430,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.32 {
+	control.33 {
 		iface MIXER
 		name 'Master Playback Volume'
 		value 0
@@ -16432,7 +16444,7 @@ state.PCH {
 			dbvalue.0 -6525
 		}
 	}
-	control.33 {
+	control.34 {
 		iface MIXER
 		name 'Master Playback Switch'
 		value false
@@ -16442,7 +16454,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.34 {
+	control.35 {
 		iface CARD
 		name 'Front Mic Jack'
 		value false
@@ -16452,7 +16464,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.35 {
+	control.36 {
 		iface CARD
 		name 'Rear Mic Jack'
 		value true
@@ -16462,7 +16474,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.36 {
+	control.37 {
 		iface CARD
 		name 'Line Jack'
 		value false
@@ -16472,7 +16484,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.37 {
+	control.38 {
 		iface CARD
 		name 'Line Out Front Jack'
 		value false
@@ -16482,7 +16494,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.38 {
+	control.39 {
 		iface CARD
 		name 'Line Out Surround Jack'
 		value false
@@ -16492,7 +16504,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.39 {
+	control.40 {
 		iface CARD
 		name 'Line Out CLFE Jack'
 		value false
@@ -16502,7 +16514,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.40 {
+	control.41 {
 		iface CARD
 		name 'Front Headphone Jack'
 		value false
@@ -16512,7 +16524,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.41 {
+	control.42 {
 		iface CARD
 		name 'SPDIF Phantom Jack'
 		value true
@@ -16522,7 +16534,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.42 {
+	control.43 {
 		iface CARD
 		name 'SPDIF Phantom Jack'
 		index 1
@@ -16533,7 +16545,7 @@ state.PCH {
 			count 1
 		}
 	}
-	control.43 {
+	control.44 {
 		iface PCM
 		name 'Playback Channel Map'
 		value.0 0
@@ -16549,7 +16561,7 @@ state.PCH {
 			range '0 - 36'
 		}
 	}
-	control.44 {
+	control.45 {
 		iface PCM
 		name 'Capture Channel Map'
 		value.0 0
@@ -16561,7 +16573,7 @@ state.PCH {
 			range '0 - 36'
 		}
 	}
-	control.45 {
+	control.46 {
 		iface PCM
 		device 1
 		name 'Playback Channel Map'
@@ -16574,7 +16586,7 @@ state.PCH {
 			range '0 - 36'
 		}
 	}
-	control.46 {
+	control.47 {
 		iface PCM
 		device 2
 		name 'Capture Channel Map'
@@ -16587,7 +16599,7 @@ state.PCH {
 			range '0 - 36'
 		}
 	}
-	control.47 {
+	control.48 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 0
