@@ -8,7 +8,7 @@ nitrogen --restore
 
 numlockx
 
-compton --config /dev/null --backend glx --focus-exclude "class_g != 'URxvt'" --glx-no-stencil --paint-on-overlay --xinerama-shadow-crop -Cbcfz -D 3 -i 0.9
+compton --config /dev/null --backend glx --focus-exclude "class_g != 'URxvt'" --paint-on-overlay --vsync opengl-swc --xinerama-shadow-crop -Cbcfz -D 1 -i 0.9
 rm --force /tmp/run_time/awesome-related/dex_have_been_executed
 urxvtd --fork --opendisplay --quiet
 xkbcomp ${DISPLAY} - | grep --invert-match "group [2-4] = AltGr;" | xkbcomp - ${DISPLAY}
