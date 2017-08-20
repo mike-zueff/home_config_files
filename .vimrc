@@ -13,6 +13,7 @@ Plug 'benmills/vimux'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
@@ -27,8 +28,6 @@ Plug 'sjl/gundo.vim'
 Plug 'syngan/vim-vimlint'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 Plug 'ynkdir/vim-vimlparser'
 call plug#end()
 
@@ -119,13 +118,13 @@ let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_max_depth=9999
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
-let g:easytags_async=1
-let g:easytags_auto_highlight=0
-let g:easytags_by_filetype="~/.vim/easytags_by_filetype"
-let g:easytags_include_members=1
 let g:gundo_help=0
 let g:gundo_right=1
 let g:gundo_width=83
+let g:gutentags_cache_dir="~/.vim/gutentags_cache_dir"
+let g:gutentags_generate_on_missing=0
+let g:gutentags_generate_on_new=0
+let g:gutentags_project_root=['README.md']
 let g:syntastic_aggregate_errors=1
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
