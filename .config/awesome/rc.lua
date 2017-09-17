@@ -109,7 +109,8 @@ mysoundmenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "sound", mysoundmenu, "/usr/share/icons/Tango/scalable/devices/audio-card.svg" },
-                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_datebook.sh" }
+                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_datebook.sh" },
+                                    { "dump", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_dump.sh" }
                                   }
                         })
 

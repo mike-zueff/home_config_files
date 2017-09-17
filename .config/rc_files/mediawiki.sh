@@ -8,7 +8,7 @@ function _rc_mediawiki_back_up
   if [[ ! -d ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP} ]]
   then
     mkdir ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
-    . ~/.config/rc_files/mediawiki_credentials.sh
+    . ~/.config/rc_files/credentials.sh
     mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user --xml amalgam | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.xml.xz
     mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki-user amalgam | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/amalgam.sql.xz
     php /var/www/localhost/htdocs/mediawiki/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki_dump.xml.xz
