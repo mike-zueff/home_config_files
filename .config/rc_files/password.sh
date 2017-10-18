@@ -1,23 +1,16 @@
 _rc_password_generate()
 {
-  if [[ ${1} =~ ^[1-9][0-9]*$ && ${1} -le 95 ]]
+  if [[ ${1} =~ ^[1-9][0-9]*$ && ${1} -le 62 ]]
   then
     local ELEMENTS I PASSWORD
 
     for I in $(seq 1 "${1}")
     do
-      if [[ ${I} -eq 1 || ${I} -eq ${1} ]]
-      then
-        local REGEX=graph
-      else
-        local REGEX=print
-      fi
-
       while true
       do
         local CHARACTER
         CHARACTER="$(dd bs=1 count=1 if=/dev/urandom status=none | tr \
-            --complement --delete [:${REGEX}:])"
+            --complement --delete '[:alnum:]')"
 
         if [[ ${#CHARACTER} -eq 1 ]]
         then
@@ -45,6 +38,6 @@ _rc_password_generate()
 
     echo "${PASSWORD}"
   else
-    echo Password length should be in the range from 1 to 95 inclusive.
+    echo Password length should be in the range from 1 to 62 inclusive.
   fi
 }
