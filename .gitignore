@@ -64,6 +64,7 @@
 .ssh
 .tgdb
 .thunderbird
+.tig_history
 .vagrant.d
 .vim
 .viminfo
