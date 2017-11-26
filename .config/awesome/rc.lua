@@ -104,7 +104,7 @@ mysoundmenu = {
     { "cans, 1/5", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end },
     { "cans, 1/6", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end },
     { "cans, 1/7", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end },
-    { "defaults", function() awful.spawn.with_shell("bash -i " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end }
+    { "speakers", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
@@ -346,6 +346,13 @@ globalkeys = gears.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "#87", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end),
+    awful.key({ modkey }, "#88", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 50") end),
+    awful.key({ modkey }, "#89", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 33") end),
+    awful.key({ modkey }, "#83", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 25") end),
+    awful.key({ modkey }, "#84", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end),
+    awful.key({ modkey }, "#85", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end),
+    awful.key({ modkey }, "#79", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end),
     awful.key({ modkey }, "KP_Add", function ()
       local selected_tag = awful.tag.selected()
 
