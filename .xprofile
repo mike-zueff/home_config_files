@@ -1,3 +1,5 @@
+export SAL_USE_VCLPLUGIN=gtk
+
 xrdb -merge /etc/X11/Xresources
 
 xrdb -merge ${HOME}/.Xresources
