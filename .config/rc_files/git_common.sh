@@ -19,7 +19,7 @@ function _rc_git_pull_origin
 
 function _rc_git_show_all_information
 {
-  git branch
+  git branch | cat
   echo
   git count-objects --human-readable --verbose
   echo
