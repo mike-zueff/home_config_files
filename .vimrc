@@ -109,6 +109,11 @@ highlight IndentGuidesEven ctermbg=237
 highlight IndentGuidesOdd ctermbg=235
 highlight Normal ctermbg=0
 
+" vim-airline symbols.
+if !exists("g:airline_symbols")
+  let g:airline_symbols={"linenr":"\u2261","whitespace":"="}
+endif
+
 " Global variables.
 let g:NERDSpaceDelims=1
 let g:NERDTreeCaseSensitiveSort=1
