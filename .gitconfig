@@ -1,9 +1,9 @@
 [commit]
-	gpgsign = true
+	gpgsign = 1
 [credential]
 	helper = /usr/bin/git-credential-libsecret
 [tag]
-	gpgsign = true
+	gpgsign = 1
 [user]
 	email = mike.zueff@gmail.com
 	name = Mike Zueff
