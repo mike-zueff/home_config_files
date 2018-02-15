@@ -93,12 +93,10 @@ function!GTogglePythonVersion()
     let g:syntastic_python_flake8_exec="flake8"
     let g:syntastic_python_pylint_exec="pylint"
     let g:syntastic_python_python_exec="python"
-    let g:ycm_python_binary_path="/usr/bin/python"
   else
-    let g:syntastic_python_flake8_exec="python3 flake8"
-    let g:syntastic_python_pylint_exec="python3 pylint"
+    let g:syntastic_python_flake8_exec="python3 /usr/bin/flake8"
+    let g:syntastic_python_pylint_exec="python3 /usr/bin/pylint"
     let g:syntastic_python_python_exec="python3"
-    let g:ycm_python_binary_path="/usr/bin/python3"
   endif
   :SyntasticCheck
 endfunction
@@ -136,8 +134,8 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-let g:syntastic_python_flake8_exec="python3 flake8"
-let g:syntastic_python_pylint_exec="python3 pylint"
+let g:syntastic_python_flake8_exec="python3 /usr/bin/flake8"
+let g:syntastic_python_pylint_exec="python3 /usr/bin/pylint"
 let g:syntastic_python_python_exec="python3"
 let g:tagbar_autoclose=1
 let g:tagbar_compact=1
@@ -147,7 +145,6 @@ let g:winresizer_vert_resize=1
 let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
     \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_python_binary_path="/usr/bin/python3"
 let g:ycm_rust_src_path="/usr/src/rust"
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_show_diagnostics_ui=0
