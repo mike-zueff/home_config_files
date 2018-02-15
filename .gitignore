@@ -60,6 +60,7 @@
 .nv
 .nvidia-settings-rc
 .pki
+.pylint.d
 .python_history
 .ssh
 .tgdb
