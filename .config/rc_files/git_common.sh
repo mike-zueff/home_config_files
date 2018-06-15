@@ -1,5 +1,8 @@
 function _rc_git_clean_repository_up
 {
+  git remote prune origin
+  git remote prune upstream
+
   rm --force --recursive .git/refs/original
   git reflog expire --all --expire=all
   git gc --prune=all
