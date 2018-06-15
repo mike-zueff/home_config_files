@@ -1,9 +1,9 @@
 URxvt*background: black
 URxvt*boldFont: xft:Hack-12:bold
 URxvt*boldItalicFont: xft:Hack-12:bold:italic
-URxvt*borderColor: web purple
-URxvt*color12: dark orchid
-URxvt*color4: maroon
+URxvt*borderColor: #555555
+URxvt*color12: #aa55aa
+URxvt*color4: #aa00ff
 URxvt*externalBorder: 0
 URxvt*font: xft:Hack-12
 URxvt*foreground: white
@@ -16,11 +16,11 @@ URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
 Xcursor.size: 24
 Xcursor.theme: Vanilla-DMZ
-Xft.antialias: true
-Xft.autohint: false
+Xft.antialias: 1
+Xft.autohint: 0
 Xft.dpi: 95
-Xft.hinting: false
-Xft.hintstyle: hintnone
+Xft.hinting: 1
+Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 xscreensaver*Dialog.background: #8600b3
