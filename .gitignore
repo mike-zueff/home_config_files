@@ -39,7 +39,6 @@
 .config/pulse
 .config/pychess
 .config/rc_files/credentials.sh
-.config/skypeforlinux
 .config/smplayer
 .config/wireshark
 .dbus
@@ -54,6 +53,7 @@
 .local
 .macromedia
 .maildir
+.mono
 .mozilla
 .mplayer
 .npm
