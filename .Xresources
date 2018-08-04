@@ -7,7 +7,7 @@ URxvt*color4: #aa00ff
 URxvt*externalBorder: 0
 URxvt*font: xft:Hack-12
 URxvt*foreground: white
-URxvt*iconFile: /usr/share/icons/Tango/scalable/apps/utilities-terminal.svg
+URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/utilities-terminal-symbolic.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
 URxvt*perl-ext-common: default,confirm-paste,selection-to-clipboard
@@ -15,7 +15,7 @@ URxvt*saveLines: 99999
 URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
 Xcursor.size: 24
-Xcursor.theme: Vanilla-DMZ
+Xcursor.theme: Yaru
 Xft.antialias: 1
 Xft.autohint: 0
 Xft.dpi: 95
