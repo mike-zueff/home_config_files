@@ -1,10 +1,15 @@
 _rc_password_generate()
 {
-  if [[ ${1} =~ ^[1-9][0-9]*$ && ${1} -le 63 ]]
+  local LENGTH
+
+  LENGTH=${1}
+  [[ ${1} == "" ]] && LENGTH=63
+
+  if [[ ${LENGTH} =~ ^[1-9][0-9]*$ && ${LENGTH} -le 63 ]]
   then
     local ELEMENTS I PASSWORD
 
-    for I in $(seq 1 "${1}")
+    for I in $(seq 1 "${LENGTH}")
     do
       while true
       do
