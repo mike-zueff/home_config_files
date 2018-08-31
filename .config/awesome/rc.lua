@@ -108,7 +108,7 @@ mysoundmenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "sound", mysoundmenu, "/usr/share/icons/Tango/scalable/devices/audio-card.svg" },
+                                    { "sound", mysoundmenu, "/usr/share/icons/Yaru/scalable/devices/audio-card-symbolic.svg" },
                                     { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_datebook.sh" },
                                     { "dump", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_dump.sh" }
                                   }
@@ -192,9 +192,9 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     if s.index < 2 then
-        awful.tag({ " α", " β", " γ", " δ", " ε", " ζ" }, s, awful.layout.layouts[6])
+        awful.tag({ "ا  ", "ب  ", "ج  ", "د  ", "ه  ", "و  ", "ز  ", "ح  ", "ط  " }, s, awful.layout.layouts[6])
     else
-        awful.tag({ " η", " θ", " ι", " κ", " λ", " μ" }, s, awful.layout.layouts[6])
+        awful.tag({ "ي  ", "ك  ", "ل  ", "م  ", "ن  ", "س  ", "ع  ", "ف  ", "ص  " }, s, awful.layout.layouts[6])
     end
 
     -- Create a promptbox for each screen
