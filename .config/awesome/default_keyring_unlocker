@@ -1,8 +1,0 @@
-#!/usr/bin/env python2
-
-import gnomekeyring, os, time
-
-time.sleep(10)
-
-gnomekeyring.unlock_sync(None, open(os.environ["HOME"] +
-    "/.config/awesome/default_keyring_password").read()[:-1])
