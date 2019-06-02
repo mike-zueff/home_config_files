@@ -14,7 +14,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/vim-easy-align'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
@@ -30,6 +29,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ynkdir/vim-vimlparser'
 call plug#end()
+
+"Plug 'ludovicchabant/vim-gutentags'
 
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
