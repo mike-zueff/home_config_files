@@ -10,6 +10,7 @@ URxvt*foreground: white
 URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/utilities-terminal-symbolic.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
+URxvt*letterSpace: -1
 URxvt*perl-ext-common: default,confirm-paste,searchable-scrollback<A-s>,selection-to-clipboard
 URxvt*saveLines: 99999
 URxvt*scrollBar: false
@@ -18,7 +19,7 @@ Xcursor.size: 24
 Xcursor.theme: Yaru
 Xft.antialias: 1
 Xft.autohint: 0
-Xft.dpi: 95
+Xft.dpi: 96
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
