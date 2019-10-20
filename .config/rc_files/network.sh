@@ -2,6 +2,9 @@ function _rc_fix_network
 {
   [[ `sudo whoami` != "root" ]] && return 1
 
+  echo Flushing IPv6 addresses...
+  sleep 5
+  sudo ip -6 address flush enp4s0
   echo Disabling NIC...
   sleep 5
   sudo ifconfig enp4s0 down

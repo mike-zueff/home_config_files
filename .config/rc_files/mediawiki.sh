@@ -1,7 +1,17 @@
-function _rc_mediawiki_back_up
+function _rc_mediawiki_back_up_house
+{
+  _util_mediawiki_back_up house
+}
+
+function _rc_mediawiki_back_up_kpi
+{
+  _util_mediawiki_back_up kpi
+}
+
+function _util_mediawiki_back_up
 {
   _RC_CURRENT_DATE_STAMP=`date +%Y_%m_%d_%H_%M_%S`
-  _RC_MEDIAWIKI_BACKUPS_DIRECTORY="/private/backups/mediawiki"
+  _RC_MEDIAWIKI_BACKUPS_DIRECTORY="/private/backups/${1}"
 
   [[ `sudo whoami` != "root" ]] && return 1
 
@@ -9,10 +19,10 @@ function _rc_mediawiki_back_up
   then
     mkdir ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
     . ~/.config/rc_files/credentials.sh
-    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=mediawiki --xml mediawiki | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.xml.xz
-    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=mediawiki mediawiki | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.sql.xz
-    php /var/www/localhost/htdocs/mediawiki/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki.xml.xz
-    sudo tar --create --directory /var/www/localhost/htdocs mediawiki | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mediawiki.tar.xz
+    mariadb-dump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki --xml wiki_${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.xml.xz
+    mariadb-dump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki wiki_${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.sql.xz
+    php /var/www/localhost/htdocs/${1}/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/wiki.xml.xz
+    sudo tar --create --directory /var/www/localhost/htdocs ${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/wiki.tar.xz
 
     _util_clear_old_backups ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}
 
