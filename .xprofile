@@ -13,3 +13,5 @@ rm --force /tmp/run_time/awesome-related/dex_have_been_executed
 urxvtd --fork --opendisplay --quiet
 xmodmap -e 'add mod3 = Scroll_Lock'
 xscreensaver -no-splash &
+
+nextcloud --background &

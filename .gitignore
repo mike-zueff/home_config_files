@@ -9,6 +9,7 @@
 .cargo
 .cgdb
 .config/GIMP
+.config/Nextcloud
 .config/QtProject.conf
 .config/Trolltech.conf
 .config/VirtualBox
@@ -76,4 +77,5 @@ Downloads
 dump
 go
 mnt
+ncloud
 wallpapers
