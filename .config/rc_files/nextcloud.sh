@@ -11,10 +11,12 @@ function _rc_nextcloud_back_up
 
     sudo -u nginx php /var/www/localhost/htdocs/nextcloud/occ maintenance:mode --on
     sudo sed --in-place "s/maintenance' => false/maintenance' => true/g" /var/www/localhost/htdocs/nextcloud/config/config.php
+    sudo systemctl stop nginx.service
 
     sudo sqlite3 /var/www/localhost/htdocs/nextcloud/data/owncloud.db .dump | xz --best > "${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/sqlite.dump.xz"
-    sudo tar --create --directory /var/www/localhost/htdocs nextcloud | xz --best > "${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/nextcloud.tar.xz"
+    sudo tar --create --directory /var/www/localhost/htdocs --exclude=nextcloud/data/ncadmin/files_* nextcloud | xz --best > "${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/nextcloud.tar.xz"
 
+    sudo systemctl restart nginx.service
     sudo sed --in-place "s/maintenance' => true/maintenance' => false/g" /var/www/localhost/htdocs/nextcloud/config/config.php
     sudo -u nginx php /var/www/localhost/htdocs/nextcloud/occ maintenance:mode --off
 
