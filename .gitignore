@@ -62,6 +62,7 @@
 .npm
 .nv
 .nvidia-settings-rc
+.pdepend
 .pki
 .pylint.d
 .python_history
