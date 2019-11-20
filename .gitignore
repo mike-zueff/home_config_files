@@ -28,6 +28,7 @@
 .config/htop
 .config/kactivitymanagerdrc
 .config/kdeglobals
+.config/kwalletrc
 .config/libreoffice
 .config/mc
 .config/menus
