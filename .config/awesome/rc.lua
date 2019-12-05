@@ -93,6 +93,8 @@ mysoundmenu = {
     { "cans, 1/5", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end },
     { "cans, 1/6", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end },
     { "cans, 1/7", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end },
+    { "cans, 1/8", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 13") end },
+    { "cans, 1/9", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 11") end },
     { "speakers", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end }
 }
 
@@ -348,6 +350,8 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "#84", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end),
     awful.key({ modkey }, "#85", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end),
     awful.key({ modkey }, "#79", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end),
+    awful.key({ modkey }, "#80", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 13") end),
+    awful.key({ modkey }, "#81", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 11") end),
     awful.key({ modkey }, "KP_Add", function ()
       local selected_tag = awful.tag.selected()
 
