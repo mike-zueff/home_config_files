@@ -12,7 +12,7 @@ URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
 URxvt*letterSpace: -1
 URxvt*perl-ext-common: default,confirm-paste,searchable-scrollback<A-s>,selection-to-clipboard
-URxvt*saveLines: 99999
+URxvt*saveLines: 999999
 URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
 Xcursor.size: 24
