@@ -14,6 +14,7 @@
 .config/Trolltech.conf
 .config/VirtualBox
 .config/awesome/default_keyring_password
+.config/binwalk
 .config/composer
 .config/configstore
 .config/d-feet
