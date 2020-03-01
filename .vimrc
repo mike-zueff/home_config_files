@@ -129,6 +129,7 @@ let g:gutentags_cache_dir="~/.vim/gutentags_cache_dir"
 let g:gutentags_generate_on_missing=0
 let g:gutentags_generate_on_new=0
 let g:gutentags_project_root=[".gitignore","README.md"]
+let g:plug_threads=1
 let g:rustfmt_autosave=1
 let g:syntastic_aggregate_errors=1
 let g:syntastic_always_populate_loc_list=1
