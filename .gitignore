@@ -4,6 +4,7 @@
 .android
 .awesome-errors
 .bash_history
+.bitmonero
 .bzr.log
 .cache
 .cargo
@@ -34,6 +35,7 @@
 .config/mc
 .config/menus
 .config/mimeapps.list
+.config/monero-project
 .config/nitrogen
 .config/okular-generator-ghostscriptrc
 .config/okular.kmessagebox
@@ -69,6 +71,7 @@
 .pki
 .pylint.d
 .python_history
+.shared-ringdb
 .ssh
 .tgdb
 .thunderbird
@@ -80,6 +83,7 @@
 .xsession-errors
 .xsession-errors.old
 Downloads
+Monero
 Nextcloud
 dump
 go
