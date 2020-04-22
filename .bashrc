@@ -26,5 +26,7 @@ export BC_ENV_ARGS=~/.config/bcrc
 for FILE in ~/.config/rc_files/*
 do
   # shellcheck source=/dev/null
-  . ${FILE}
+  . "${FILE}"
 done
+
+. ~/Nextcloud/nosync/rig/rc/rc.sh

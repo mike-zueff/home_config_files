@@ -136,6 +136,7 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_javascript_checkers=["eslint","jshint"]
 let g:syntastic_python_flake8_exec="python3 /usr/bin/flake8"
 let g:syntastic_python_pylint_exec="python3 /usr/bin/pylint"
 let g:syntastic_python_python_exec="python3"
