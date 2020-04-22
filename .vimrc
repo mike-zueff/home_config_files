@@ -23,14 +23,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'simeji/winresizer'
-Plug 'sjl/gundo.vim'
 Plug 'syngan/vim-vimlint'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ynkdir/vim-vimlparser'
 call plug#end()
 
-"Plug 'ludovicchabant/vim-gutentags'
+"'ludovicchabant/vim-gutentags'
+"'sjl/gundo.vim'
 
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
@@ -42,7 +42,7 @@ endif
 autocmd FileType diff setlocal colorcolumn=82
 autocmd FileType fugitiveblame setlocal colorcolumn&
 autocmd FileType gitcommit setlocal colorcolumn&
-autocmd FileType gundo setlocal colorcolumn&
+"autocmd FileType gundo setlocal colorcolumn&
 autocmd FileType help setlocal colorcolumn&
 autocmd FileType nerdtree setlocal colorcolumn&
 autocmd FileType qf setlocal colorcolumn&
@@ -122,9 +122,9 @@ let g:ctrlp_cache_dir="~/.vim/ctrlp"
 let g:ctrlp_max_depth=9999
 let g:ctrlp_show_hidden=1
 let g:ctrlp_tilde_homedir=1
-let g:gundo_help=0
-let g:gundo_right=1
-let g:gundo_width=83
+"let g:gundo_help=0
+"let g:gundo_right=1
+"let g:gundo_width=83
 let g:gutentags_cache_dir="~/.vim/gutentags_cache_dir"
 let g:gutentags_generate_on_missing=0
 let g:gutentags_generate_on_new=0
@@ -158,7 +158,7 @@ nnoremap j gj
 nnoremap k gk
 nnoremap<silent><f2> :NERDTreeToggle<cr>
 nnoremap<silent><f3> :TagbarToggle<cr>
-nnoremap<silent><f4> :GundoToggle<cr>
+"nnoremap<silent><f4> :GundoToggle<cr>
 nnoremap<silent><f5> :tab split<cr>:tabmove<cr>
 nnoremap<silent><f6> :$tabnew<cr>
 nnoremap<silent><f7> :call GToggleColorColumnValue()<cr>
