@@ -47,6 +47,7 @@
 .config/rc_files/credentials.sh
 .config/smplayer
 .config/sqlitebrowser
+.config/systemd
 .config/wireshark
 .dbus
 .dmrc
@@ -88,4 +89,5 @@ Nextcloud
 dump
 go
 mnt
+monero-blockchain-ancestry.log
 wallpapers

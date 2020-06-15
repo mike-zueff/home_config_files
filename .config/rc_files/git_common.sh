@@ -16,8 +16,8 @@ function _rc_git_clean_repository_up
 
 function _rc_git_pull_origin
 {
-  git pull --all
-  git pull origin master
+  git pull --all --no-rebase
+  git pull --no-rebase origin master
 }
 
 function _rc_git_show_all_information
