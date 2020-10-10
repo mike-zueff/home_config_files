@@ -1,4 +1,4 @@
-function _rc_nextcloud_back_up
+function _rc_create_backup_nextcloud
 {
   _RC_CURRENT_DATE_STAMP=$(date +%Y_%m_%d_%H_%M_%S)
   _RC_NEXTCLOUD_BACKUPS_DIRECTORY="/private/backups/nextcloud"

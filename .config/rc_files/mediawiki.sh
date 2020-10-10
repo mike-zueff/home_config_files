@@ -1,9 +1,9 @@
-function _rc_mediawiki_back_up_house
+function _rc_create_backup_mediawiki_house
 {
   _util_mediawiki_back_up house
 }
 
-function _rc_mediawiki_back_up_kpi
+function _rc_create_backup_mediawiki_kpi
 {
   _util_mediawiki_back_up kpi
 }
