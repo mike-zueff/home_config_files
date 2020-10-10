@@ -19,7 +19,7 @@ fi
 
 cd /tmp/volatile || exit
 
-PATH=${PATH}:/usr/sbin:~/.cargo/bin
+PATH=${PATH}:/usr/sbin:~/bin/xmr:~/.cargo/bin
 
 export BC_ENV_ARGS=~/.config/bcrc
 

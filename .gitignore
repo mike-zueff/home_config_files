@@ -24,7 +24,7 @@
 .config/enchant
 .config/eog
 .config/gconf
-.config/google-chrome
+.config/google-chrome-unstable
 .config/gtk-2.0
 .config/gtk-3.0
 .config/htop
@@ -86,6 +86,7 @@
 Downloads
 Monero
 Nextcloud
+bin
 dump
 go
 mnt
