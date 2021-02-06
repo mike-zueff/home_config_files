@@ -16,7 +16,7 @@ do
     TIME_LAST_S=$TIME_NEAREST_S
 
     INTERVAL_EXPIRATION_U=$(( (INTERVAL_NOTIFICATION_S + 2 * INTERVAL_SLEEP_S) * 1000 ))
-    /usr/bin/notify-send --expire-time $INTERVAL_EXPIRATION_U --icon /usr/share/icons/Tango/scalable/apps/internet-web-browser.svg "<b>MediaWiki</b><br />Please visit the private MediaWiki."
+    /usr/bin/notify-send --expire-time $INTERVAL_EXPIRATION_U --icon /usr/share/icons/Tango/scalable/apps/internet-web-browser.svg "<b>MediaWiki</b><br />Please visit the Private MediaWiki."
   fi
 
   sleep $INTERVAL_SLEEP_S
