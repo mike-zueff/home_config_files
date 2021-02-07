@@ -29,4 +29,4 @@ do
   . "${FILE}"
 done
 
-. ~/Nextcloud/nosync/mm/rc/rc.sh
+. /private/nosync/mm/rc/rc.sh
