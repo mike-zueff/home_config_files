@@ -1,10 +1,15 @@
 local awful = require("awful")
 
 local awesome_dex_lock_file = "dex_had_been_executed"
+local awesome_goldendict_lock_file = "goldendict_had_been_executed"
 local awesome_run_time_directory = "/tmp/run_time/awesome-related"
 
 function execute_once(process_name, argv, launcher)
   if process_name == "dex" and awful.util.file_readable(awesome_run_time_directory .. "/" .. awesome_dex_lock_file) then
+    return
+  end
+
+  if process_name == "goldendict" and awful.util.file_readable(awesome_run_time_directory .. "/" .. awesome_goldendict_lock_file) then
     return
   end
 
@@ -21,6 +26,11 @@ function execute_once(process_name, argv, launcher)
   if process_name == "dex" then
     awful.spawn.with_shell("mkdir --parents " .. awesome_run_time_directory)
     awful.spawn.with_shell("touch " .. awesome_run_time_directory .. "/" .. awesome_dex_lock_file)
+  end
+
+  if process_name == "goldendict" then
+    awful.spawn.with_shell("mkdir --parents " .. awesome_run_time_directory)
+    awful.spawn.with_shell("touch " .. awesome_run_time_directory .. "/" .. awesome_goldendict_lock_file)
   end
 end
 
