@@ -19,7 +19,7 @@ fi
 
 cd /tmp/volatile || exit
 
-PATH=${PATH}:/usr/sbin:~/bin/xmr:~/.cargo/bin
+PATH=${PATH}:/usr/sbin:~/.cargo/bin:~/bin/xmr
 
 export BC_ENV_ARGS=~/.config/bcrc
 
@@ -29,4 +29,4 @@ do
   . "${FILE}"
 done
 
-. /private/nosync/mm/rc/rc.sh
+. /private/projects/blade/rc/rc.sh
