@@ -6,7 +6,7 @@ function _rc_create_backup_blade
   if [[ ! -d ${_RC_BLADE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP} ]]
   then
     mkdir "${_RC_BLADE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}"
-    tar --create --directory /private/projects --exclude blade/.git blade | xz --best > "${_RC_BLADE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/blade.tar.xz"
+    tar --create --directory /private/projects --exclude blade/.git --exclude blade/node_modules blade | xz --best > "${_RC_BLADE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/blade.tar.xz"
     _util_clear_old_backups ${_RC_BLADE_BACKUPS_DIRECTORY}
     mkdir --parents /mnt/luksextra1/xtr1/backups/blade
     cp --force --recursive "${_RC_BLADE_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}" /mnt/luksextra1/xtr1/backups/blade
