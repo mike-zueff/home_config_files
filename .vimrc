@@ -2,7 +2,7 @@
 if empty(glob("~/.vim"))
   let g:vimrc_is_bundle_installation_required=1
   silent !curl --create-dirs --output ~/.vim/autoload/plug.vim
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 call plug#begin()
@@ -59,7 +59,7 @@ colorscheme gruvbox
 " Commands.
 command!GRemoveTrailingWhitespace :%s/\s\+$//g
 command!GSortWordsInLine call
-    \ setline(".",join(sort(split(getline(".")," "))," "))
+      \ setline(".",join(sort(split(getline(".")," "))," "))
 
 " Functions.
 function!GDiffOrigin()
@@ -107,10 +107,26 @@ highlight IndentGuidesEven ctermbg=237
 highlight IndentGuidesOdd ctermbg=235
 highlight Normal ctermbg=0
 
-" vim-airline symbols.
-if !exists("g:airline_symbols")
-  let g:airline_symbols={"linenr":"\u2261","whitespace":"="}
-endif
+" vim symbols.
+scriptencoding utf-8
+
+let g:airline_symbols={
+      \ "colnr"    :" ℅:",
+      \ "maxlinenr":"",
+      \ }
+
+let g:NERDTreeGitStatusIndicatorMapCustom={
+      \ "Clean"    :"C",
+      \ "Deleted"  :"D",
+      \ "Dirty"    :"X",
+      \ "Ignored"  :"?",
+      \ "Modified" :"*",
+      \ "Renamed"  :"➜",
+      \ "Staged"   :"+",
+      \ "Unknown"  :"E",
+      \ "Unmerged" :"═",
+      \ "Untracked":"!",
+      \ }
 
 " Global variables.
 let g:NERDSpaceDelims=1
@@ -147,7 +163,7 @@ let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
 let g:ycm_complete_in_comments=1
 let g:ycm_global_ycm_extra_conf=
-    \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+      \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_show_diagnostics_ui=0
 
