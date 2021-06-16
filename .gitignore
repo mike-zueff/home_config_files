@@ -30,6 +30,7 @@
 .config/htop
 .config/kactivitymanagerdrc
 .config/kdeglobals
+.config/kglobalshortcutsrc
 .config/kwalletrc
 .config/libreoffice
 .config/mc

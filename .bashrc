@@ -18,15 +18,20 @@ fi
 # Put your fun stuff here.
 
 cd /tmp/volatile || exit
-
-PATH=${PATH}:/usr/sbin:~/.cargo/bin:~/bin/xmr
-
+PATH=$PATH:~/.local/bin:~/.cargo/bin:~/bin/xmr
 export BC_ENV_ARGS=~/.config/bcrc
 
 for FILE in ~/.config/rc_files/*
 do
   # shellcheck source=/dev/null
-  . "${FILE}"
+  . "$FILE"
 done
 
+# shellcheck source=/dev/null
 . /private/projects/blade/rc/rc.sh
+
+# shellcheck source=/dev/null
+. /private/projects/javascript_libraries/rc/rc.sh
+
+# shellcheck source=/dev/null
+. /private/projects/poisk/rc/rc.sh
