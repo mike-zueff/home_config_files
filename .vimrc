@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " vim-plug and the related stuff.
 if empty(glob("~/.vim"))
   let g:vimrc_is_bundle_installation_required=1
@@ -108,11 +110,10 @@ highlight IndentGuidesOdd ctermbg=235
 highlight Normal ctermbg=0
 
 " vim symbols.
-scriptencoding utf-8
-
 let g:airline_symbols={
       \ "colnr"    :" ℅:",
-      \ "maxlinenr":"",
+      \ "dirty"    :"!",
+      \ "maxlinenr":"m",
       \ }
 
 let g:NERDTreeGitStatusIndicatorMapCustom={
