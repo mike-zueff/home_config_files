@@ -1,11 +1,6 @@
-function _rc_create_backup_mediawiki_house
+function _rc_create_backup_mediawiki_journal
 {
-  _util_mediawiki_back_up house
-}
-
-function _rc_create_backup_mediawiki_kpi
-{
-  _util_mediawiki_back_up kpi
+  _util_mediawiki_back_up journal
 }
 
 function _util_mediawiki_back_up
@@ -19,8 +14,8 @@ function _util_mediawiki_back_up
   then
     mkdir ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
     . ~/.config/rc_files/credentials.sh
-    mariadb-dump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki --xml wiki_${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.xml.xz
-    mariadb-dump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wiki wiki_${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.sql.xz
+    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wikiuser --xml wikidb | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.xml.xz
+    mysqldump --default-character-set=binary --host=localhost --password=${_RC_MEDIAWIKI_PASSWORD} --user=wikiuser wikidb | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/mariadb.sql.xz
     sudo php /var/www/localhost/htdocs/${1}/maintenance/dumpBackup.php --full --include-files --logs --uploads | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/wiki.xml.xz
     sudo tar --create --directory /var/www/localhost/htdocs ${1} | xz --best > ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}/wiki.tar.xz
 
