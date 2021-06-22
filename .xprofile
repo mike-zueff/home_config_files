@@ -13,3 +13,6 @@ xmodmap -e 'add mod3 = Scroll_Lock'
 xscreensaver -no-splash &
 
 nextcloud --background &
+
+redshift -x
+redshift -P -l 51.7:39.2 &
