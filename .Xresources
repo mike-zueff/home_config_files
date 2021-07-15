@@ -7,7 +7,7 @@ URxvt*color4: #aa00ff
 URxvt*externalBorder: 0
 URxvt*font: xft:Hack-12
 URxvt*foreground: white
-URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/utilities-terminal-symbolic.svg
+URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/terminal-app-symbolic.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack-12:italic
 URxvt*letterSpace: -1
