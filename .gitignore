@@ -10,6 +10,7 @@
 .cargo
 .cgdb
 .config/GIMP
+.config/Meltytech
 .config/Nextcloud
 .config/QtProject.conf
 .config/Trolltech.conf
