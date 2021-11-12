@@ -37,6 +37,9 @@ call plug#end()
 if exists("g:vimrc_is_bundle_installation_required")
   PlugUpdate
   call mkdir(expand("~/.vim/undodir"))
+  silent !sed --in-place
+        \ 's/command\! -complete=file/command\! -nargs=? -complete=file/g'
+        \ ~/.vim/plugged/vim-ripgrep/plugin/vim-ripgrep.vim
   qall
 endif
 
