@@ -28,10 +28,4 @@ do
 done
 
 # shellcheck source=/dev/null
-. /private/projects/blade/rc/rc.sh
-
-# shellcheck source=/dev/null
-. /private/projects/javascript_libraries/rc/rc.sh
-
-# shellcheck source=/dev/null
-. /private/projects/poisk/rc/rc.sh
+. /private/projects/eigengrau/rc/rc.sh
