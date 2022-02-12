@@ -21,8 +21,6 @@ function _rc_create_backup_nextcloud
     sudo -u nginx php /var/www/localhost/htdocs/nextcloud/occ maintenance:mode --off
 
     _util_clear_old_backups ${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}
-    mkdir --parents /mnt/luksextra1/xtr1/backups/nextcloud
-    cp --force --recursive "${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}" /mnt/luksextra1/xtr1/backups/nextcloud
     mc ${_RC_NEXTCLOUD_BACKUPS_DIRECTORY} "${_RC_NEXTCLOUD_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}"
   fi
 }

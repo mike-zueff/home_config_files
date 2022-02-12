@@ -21,8 +21,6 @@ function _util_mediawiki_back_up
 
     _util_clear_old_backups ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}
 
-    mkdir --parents /mnt/luksextra1/xtr1/backups/${1}
-    cp --force --recursive ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP} /mnt/luksextra1/xtr1/backups/${1}
     mc ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY} ${_RC_MEDIAWIKI_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
   fi
 }

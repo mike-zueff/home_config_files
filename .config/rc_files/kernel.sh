@@ -11,8 +11,6 @@ function _rc_kernel_back_up
 
     _util_clear_old_backups ${_RC_KERNEL_BACKUPS_DIRECTORY}
 
-    mkdir --parents /mnt/luksextra1/xtr1/backups/kernel
-    cp --force --recursive ${_RC_KERNEL_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP} /mnt/luksextra1/xtr1/backups/kernel
     mc ${_RC_KERNEL_BACKUPS_DIRECTORY} ${_RC_KERNEL_BACKUPS_DIRECTORY}/${_RC_CURRENT_DATE_STAMP}
   fi
 }
