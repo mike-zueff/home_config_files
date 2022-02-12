@@ -26,6 +26,3 @@ do
   # shellcheck source=/dev/null
   . "$FILE"
 done
-
-# shellcheck source=/dev/null
-. /private/projects/eigengrau/rc/rc.sh
