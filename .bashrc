@@ -18,7 +18,6 @@ fi
 # Put your fun stuff here.
 
 cd /tmp/volatile || exit
-PATH=$PATH:~/.local/bin:~/.cargo/bin:~/bin/xmr
 export BC_ENV_ARGS=~/.config/bcrc
 
 for FILE in ~/.config/rc_files/*
