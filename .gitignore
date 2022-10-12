@@ -2,6 +2,7 @@
 .Xauthority
 .adobe
 .android
+.audacity-data
 .awesome-errors
 .bash_history
 .bitmonero
@@ -16,6 +17,7 @@
 .config/Trolltech.conf
 .config/VirtualBox
 .config/awesome/default_keyring_password
+.config/bashtop
 .config/binwalk
 .config/composer
 .config/configstore
