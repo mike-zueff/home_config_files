@@ -40,6 +40,8 @@
 .config/menus
 .config/mimeapps.list
 .config/monero-project
+.config/nautilus/search-metadata
+.config/neofetch/config.conf
 .config/nitrogen
 .config/okular-generator-ghostscriptrc
 .config/okular.kmessagebox
