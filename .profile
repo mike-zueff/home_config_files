@@ -1,1 +1,1 @@
-PATH=$PATH:~/.cargo/bin:~/bin/xmr
+PATH=$PATH:~/.cargo/bin

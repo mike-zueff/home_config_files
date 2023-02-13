@@ -5,7 +5,6 @@
 .audacity-data
 .awesome-errors
 .bash_history
-.bitmonero
 .bzr.log
 .cache
 .cargo
@@ -26,6 +25,7 @@
 .config/deluge
 .config/enchant
 .config/eog
+.config/feather
 .config/gconf
 .config/google-chrome-unstable
 .config/gtk-2.0
@@ -39,7 +39,6 @@
 .config/mc
 .config/menus
 .config/mimeapps.list
-.config/monero-project
 .config/nautilus/search-metadata
 .config/neofetch/config.conf
 .config/nitrogen
@@ -51,6 +50,7 @@
 .config/pulse
 .config/pychess
 .config/rc_files/credentials.sh
+.config/remmina
 .config/smplayer
 .config/sqlitebrowser
 .config/systemd
@@ -78,7 +78,6 @@
 .pki
 .pylint.d
 .python_history
-.shared-ringdb
 .ssh
 .tgdb
 .thunderbird
@@ -90,11 +89,9 @@
 .xsession-errors
 .xsession-errors.old
 Downloads
-Monero
 Nextcloud
 bin
 dump
 go
 mnt
-monero-blockchain-ancestry.log
 wallpapers
