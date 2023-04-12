@@ -18,6 +18,7 @@
 .config/awesome/default_keyring_password
 .config/bashtop
 .config/binwalk
+.config/btop
 .config/composer
 .config/configstore
 .config/d-feet
