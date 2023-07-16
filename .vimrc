@@ -192,6 +192,7 @@ nnoremap<silent><leader><f12> :lnext<cr>
 xmap<cr> <plug>(EasyAlign)
 
 " Enabled options.
+set belloff=all
 set colorcolumn=81
 set completeopt-=preview
 set confirm

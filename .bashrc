@@ -20,6 +20,8 @@ fi
 cd /tmp/volatile || exit
 export BC_ENV_ARGS=~/.config/bcrc
 
+bind 'set bell-style none'
+
 for FILE in ~/.config/rc_files/*
 do
   # shellcheck source=/dev/null
