@@ -32,6 +32,7 @@ Plug 'ynkdir/vim-vimlparser'
 call plug#end()
 
 "'ludovicchabant/vim-gutentags'
+"'ryanoasis/vim-devicons'
 "'sjl/gundo.vim'
 
 if exists("g:vimrc_is_bundle_installation_required")
