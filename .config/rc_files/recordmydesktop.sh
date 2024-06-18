@@ -1,13 +1,13 @@
-function _rc_parecord
+function _rc_obsolete_parecord
 {
   _RC_REC_DATE=$(date +%Y_%m_%d_%H_%M_%S)
 
-  _rc_pipewire_reset
-  _rc_pipewire_prepare
+  _rc_obsolete_pipewire_reset
+  _rc_obsolete_pipewire_prepare
   parecord --device desktop-record-virtual-microphone-1 "/zfs/rec_sound/${_RC_REC_DATE}.wav"
 }
 
-function _rc_pipewire_prepare
+function _rc_obsolete_pipewire_prepare
 {
   pactl load-module module-null-sink \
     channel_map=stereo \
@@ -29,12 +29,12 @@ function _rc_pipewire_prepare
   pw-link desktop-record-combined-sink-1:monitor_FR desktop-record-virtual-microphone-1:input_FR
 }
 
-function _rc_pipewire_reset
+function _rc_obsolete_pipewire_reset
 {
   pactl unload-module module-null-sink
 }
 
-function _rc_recordmydesktop
+function _rc_obsolete_recordmydesktop
 {
   _RC_REC_COMMAND=""
   _RC_REC_DATE=$(date +%Y_%m_%d_%H_%M_%S)
