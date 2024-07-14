@@ -15,6 +15,7 @@
 .config/QtProject.conf
 .config/Trolltech.conf
 .config/VirtualBox
+.config/audacity
 .config/awesome/default_keyring_password
 .config/bashtop
 .config/binwalk
