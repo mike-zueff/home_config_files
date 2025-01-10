@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=nekoray
-Exec=/zfs/ext4/home/mansur/bin/nekoray/nekoray -tray
+Name=nekobox
+Exec=/zfs/ext4/home/mansur/bin/nekoray/nekobox -tray
 Terminal=false
 Categories=Network
 Type=Application
