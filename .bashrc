@@ -27,6 +27,3 @@ do
   # shellcheck source=/dev/null
   . "$FILE"
 done
-
-# shellcheck source=/dev/null
-. /zfs/eigengrau/rc/rc.sh
