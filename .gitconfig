@@ -1,7 +1,7 @@
 [commit]
 	gpgsign = 1
 [credential]
-	helper = /usr/bin/git-credential-libsecret
+	helper = /usr/libexec/git-core/git-credential-libsecret
 [tag]
 	gpgsign = 1
 [user]
