@@ -52,6 +52,8 @@
 .config/pavucontrol.ini
 .config/pulse
 .config/pychess
+.config/qt5ct
+.config/qt6ct
 .config/rc_files/credentials.sh
 .config/remmina
 .config/smplayer
