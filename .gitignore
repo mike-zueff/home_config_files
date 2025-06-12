@@ -14,6 +14,7 @@
 .config/Nextcloud
 .config/QtProject.conf
 .config/Trolltech.conf
+.config/Unknown Organization
 .config/VirtualBox
 .config/audacity
 .config/awesome/default_keyring_password
@@ -57,6 +58,8 @@
 .config/sqlitebrowser
 .config/systemd
 .config/wireshark
+.config/zoom.conf
+.config/zoomus.conf
 .dbus
 .dmrc
 .docker
@@ -91,6 +94,7 @@
 .xscreensaver
 .xsession-errors
 .xsession-errors.old
+.zoom
 Downloads
 Nextcloud
 bin
