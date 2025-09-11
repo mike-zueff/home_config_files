@@ -8,7 +8,7 @@ if empty(glob("~/.vim"))
 endif
 
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --cs-completer --java-completer --rust-completer --ts-completer' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
