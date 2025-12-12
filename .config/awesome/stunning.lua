@@ -40,6 +40,12 @@ mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
   awful.spawn.with_shell(terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "calendar.sh")
 end)))
 
+tag.connect_signal("property::selected", function(t)
+  for _, c in ipairs(t:clients()) do
+    c:raise()
+  end
+end)
+
 execute_once("dex", "--autostart")
 execute_once("goldendict")
 awful.spawn.with_shell(awful.util.getdir("config") .. "colormgr")
