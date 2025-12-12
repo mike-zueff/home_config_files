@@ -42,7 +42,9 @@ end)))
 
 tag.connect_signal("property::selected", function(t)
   for _, c in ipairs(t:clients()) do
-    c:raise()
+    if c.fullscreen then
+      c:raise()
+    end
   end
 end)
 
