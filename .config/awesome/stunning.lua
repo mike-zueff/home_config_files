@@ -1,4 +1,5 @@
 local awful = require("awful")
+local gears = require("gears")
 
 local awesome_dex_lock_file = "dex_had_been_executed"
 local awesome_goldendict_lock_file = "goldendict_had_been_executed"
@@ -39,6 +40,45 @@ awful.spawn.with_shell("nitrogen --restore")
 mytextclock:buttons(awful.util.table.join(awful.button({ }, 1, function ()
   awful.spawn.with_shell(terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "calendar.sh")
 end)))
+
+local function update_wibar_for_screen(s)
+  if not s or not s.mywibox then return end
+
+  for _, c in ipairs(s.clients) do
+    if c.fullscreen and c:isvisible() then
+      s.mywibox.visible = false
+      return
+    end
+  end
+
+  s.mywibox.visible = true
+end
+
+client.connect_signal("property::fullscreen", function(c)
+  update_wibar_for_screen(c.screen)
+end)
+
+client.connect_signal("property::screen", function(c)
+  update_wibar_for_screen(c.screen)
+end)
+
+tag.connect_signal("property::selected", function(t)
+  update_wibar_for_screen(t.screen)
+end)
+
+client.connect_signal("unmanage", function(c)
+  update_wibar_for_screen(c.screen)
+end)
+
+client.connect_signal("manage", function(c)
+  local class = c.class or ""
+
+  if class == "TelegramDesktop" then
+    gears.timer.delayed_call(function()
+      update_wibar_for_screen(c.screen)
+    end)
+  end
+end)
 
 execute_once("dex", "--autostart")
 execute_once("goldendict")
