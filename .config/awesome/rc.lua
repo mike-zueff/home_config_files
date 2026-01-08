@@ -35,10 +35,10 @@ end)
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -53,15 +53,29 @@ modkey = "Mod4"
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   -- { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+   -- { "manual", terminal .. " -e man awesome" },
+   -- { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
+   -- { "quit", function() awesome.quit() end },
+}
+
+mysoundmenu = {
+    { "cans, 1/2", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 50") end },
+    { "cans, 1/3", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 33") end },
+    { "cans, 1/4", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 25") end },
+    { "cans, 1/5", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end },
+    { "cans, 1/6", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end },
+    { "cans, 1/7", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end },
+    { "cans, 1/8", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 13") end },
+    { "cans, 1/9", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 11") end },
+    { "speakers", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "sound", mysoundmenu, "/usr/share/icons/Yaru/scalable/devices/audio-card-symbolic.svg" },
+                                    { "datebook", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_datebook.sh" },
+                                    { "dump", terminal .. " -e bash --rcfile " .. awful.util.getdir("config") .. "menu_dump.sh" }
                                   }
                         })
 
@@ -86,7 +100,7 @@ tag.connect_signal("request::default_layouts", function()
         awful.layout.suit.spiral,
         awful.layout.suit.spiral.dwindle,
         awful.layout.suit.max,
-        awful.layout.suit.max.fullscreen,
+        -- awful.layout.suit.max.fullscreen,
         awful.layout.suit.magnifier,
         awful.layout.suit.corner.nw,
     })
@@ -94,6 +108,7 @@ end)
 -- }}}
 
 -- {{{ Wallpaper
+--[[
 screen.connect_signal("request::wallpaper", function(s)
     awful.wallpaper {
         screen = s,
@@ -111,6 +126,7 @@ screen.connect_signal("request::wallpaper", function(s)
         }
     }
 end)
+--]]
 -- }}}
 
 -- {{{ Wibar
@@ -119,14 +135,18 @@ end)
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytextclock = wibox.widget.textclock(" %b %d, %a, %H:%M ", 1)
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    if s.index < 2 then
+        awful.tag({ "ا  ", "ب  ", "ت  ", "ث  ", "ج  ", "ح  ", "خ  ", "د  ", "ذ  " }, s, awful.layout.layouts[6])
+    else
+        awful.tag({ "ر  ", "ز  ", "س  ", "ش  ", "ص  ", "ض  ", "ط  ", "ظ  ", "ع  " }, s, awful.layout.layouts[6])
+    end
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    s.mypromptbox = awful.widget.prompt({ prompt = "$ " })
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
@@ -218,6 +238,7 @@ awful.keyboard.append_global_keybindings({
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
               {description = "show main menu", group = "awesome"}),
+              --[[
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -232,12 +253,33 @@ awful.keyboard.append_global_keybindings({
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+              --]]
+    awful.key({ modkey,           }, "Return", function () awful.spawn.with_shell(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "#87", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_defaults.sh") end),
+    awful.key({ modkey }, "#88", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 50") end),
+    awful.key({ modkey }, "#89", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 33") end),
+    awful.key({ modkey }, "#83", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 25") end),
+    awful.key({ modkey }, "#84", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 20") end),
+    awful.key({ modkey }, "#85", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 17") end),
+    awful.key({ modkey }, "#79", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 14") end),
+    awful.key({ modkey }, "#80", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 13") end),
+    awful.key({ modkey }, "#81", function() awful.spawn.with_shell("bash " .. awful.util.getdir("config") .. "menu_sound_cans.sh 11") end),
+    awful.key({ modkey }, "KP_Add", function ()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = false end
+    end),
+    awful.key({ modkey }, "KP_Enter", function() awful.spawn.with_shell("xscreensaver-command -lock") end),
+    awful.key({ modkey }, "KP_Subtract", function ()
+      local selected_tag = awful.tag.selected()
+
+      for i = 1, #selected_tag:clients() do selected_tag:clients()[i].minimized = true end
+    end)
 })
 
 -- Tags related keybindings
@@ -487,7 +529,7 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         id         = "titlebars",
         rule_any   = { type = { "normal", "dialog" } },
-        properties = { titlebars_enabled = true      }
+        properties = { titlebars_enabled = false      }
     }
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -561,3 +603,5 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
+
+dofile(awful.util.getdir("config") .. "stunning.lua")
