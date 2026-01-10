@@ -410,7 +410,8 @@ awful.keyboard.append_global_keybindings({
                 end
             end
         end,
-    },
+    }
+    --[[
     awful.key {
         modifiers   = { modkey },
         keygroup    = "numpad",
@@ -423,6 +424,7 @@ awful.keyboard.append_global_keybindings({
             end
         end,
     }
+    --]]
 })
 
 client.connect_signal("request::default_mousebindings", function()
