@@ -30,6 +30,7 @@
 .config/eog
 .config/feather
 .config/gconf
+.config/git-cola
 .config/google-chrome-unstable
 .config/gtk-2.0
 .config/gtk-3.0

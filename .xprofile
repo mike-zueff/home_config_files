@@ -6,7 +6,7 @@ nitrogen --restore
 
 numlockx
 
-picom --config /dev/null --backend glx --crop-shadow-to-monitor --focus-exclude "class_g != 'URxvt'" --vsync --xrender-sync-fence -D 1 -bf -i 0.9
+picom --config /dev/null --backend xrender --crop-shadow-to-monitor --focus-exclude "class_g != 'URxvt'" --vsync --xrender-sync-fence -D 1 -bf -i 0.9
 rm --force /tmp/run_time/awesome-related/dex_have_been_executed
 urxvtd --fork --opendisplay --quiet
 xmodmap -e 'add mod3 = Scroll_Lock'
