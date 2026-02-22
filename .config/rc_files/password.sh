@@ -14,24 +14,24 @@ _rc_password_generate()
   local upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   local lower='abcdefghijklmnopqrstuvwxyz'
   local digits='0123456789'
-  local special='!@#$%^&*()-_=+[]{};:,.<>?'\''/\~`|"'
+  local special='@%_=+:,.'
   local all="$upper$lower$digits$special"
 
   local password=(
-    "$(printf '%s' "$upper"   | fold -w1 | shuf | head -n1)"
-    "$(printf '%s' "$lower"   | fold -w1 | shuf | head -n1)"
-    "$(printf '%s' "$digits"  | fold -w1 | shuf | head -n1)"
-    "$(printf '%s' "$special" | fold -w1 | shuf | head -n1)"
+    "$(env LC_ALL=C printf '%s' "$upper"   | fold -w1 | shuf | head -n1)"
+    "$(env LC_ALL=C printf '%s' "$lower"   | fold -w1 | shuf | head -n1)"
+    "$(env LC_ALL=C printf '%s' "$digits"  | fold -w1 | shuf | head -n1)"
+    "$(env LC_ALL=C printf '%s' "$special" | fold -w1 | shuf | head -n1)"
   )
 
   local remaining=$((length - 4))
   if (( remaining > 0 )); then
     password+=(
-      "$(tr -dc "$all" </dev/urandom | head -c "$remaining" | fold -w1)"
+      "$(env LC_ALL=C tr -dc "$all" </dev/urandom | head -c "$remaining" | fold -w1)"
     )
   fi
 
-  printf '%s\n' "${password[@]}" | shuf | tr -d '\n'
+  env LC_ALL=C printf '%s\n' "${password[@]}" | shuf | tr -d '\n'
   echo
 }
 
