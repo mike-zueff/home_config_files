@@ -14,7 +14,7 @@ _rc_password_generate()
   local upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   local lower='abcdefghijklmnopqrstuvwxyz'
   local digits='0123456789'
-  local special='!@#$%^&*()-_=+[]{};:,.<>?/'
+  local special='!@#$%^&*()-_=+[]{};:,.<>?'\''/\~`|"'
   local all="$upper$lower$digits$special"
 
   local password=(
@@ -27,7 +27,7 @@ _rc_password_generate()
   local remaining=$((length - 4))
   if (( remaining > 0 )); then
     password+=(
-      $(tr -dc "$all" </dev/urandom | head -c "$remaining" | fold -w1)
+      "$(tr -dc "$all" </dev/urandom | head -c "$remaining" | fold -w1)"
     )
   fi
 
