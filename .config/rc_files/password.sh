@@ -1,5 +1,41 @@
 _rc_password_generate()
 {
+  local length="$1"
+
+  if [[ -z "$length" ]]; then
+    length=32
+  fi
+
+  if [[ -z "$length" || "$length" -lt 4 ]]; then
+    echo "Usage: _rc_password_generate <length>=4+" >&2
+    return 1
+  fi
+
+  local upper='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  local lower='abcdefghijklmnopqrstuvwxyz'
+  local digits='0123456789'
+  local special='!@#$%^&*()-_=+[]{};:,.<>?/'
+  local all="$upper$lower$digits$special"
+
+  local password=(
+    "$(printf '%s' "$upper"   | fold -w1 | shuf | head -n1)"
+    "$(printf '%s' "$lower"   | fold -w1 | shuf | head -n1)"
+    "$(printf '%s' "$digits"  | fold -w1 | shuf | head -n1)"
+    "$(printf '%s' "$special" | fold -w1 | shuf | head -n1)"
+  )
+
+  local remaining=$((length - 4))
+  if (( remaining > 0 )); then
+    password+=(
+      $(tr -dc "$all" </dev/urandom | head -c "$remaining" | fold -w1)
+    )
+  fi
+
+  printf '%s\n' "${password[@]}" | shuf | tr -d '\n'
+  echo
+}
+_rc_tmp_not_needed_password_generate()
+{
   local LENGTH
 
   LENGTH=${1}
