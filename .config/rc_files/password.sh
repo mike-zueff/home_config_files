@@ -34,6 +34,7 @@ _rc_password_generate()
   printf '%s\n' "${password[@]}" | shuf | tr -d '\n'
   echo
 }
+
 _rc_tmp_not_needed_password_generate()
 {
   local LENGTH
@@ -51,7 +52,7 @@ _rc_tmp_not_needed_password_generate()
       do
         local CHARACTER
         CHARACTER="$(dd bs=1 count=1 if=/dev/urandom status=none | tr \
-            --complement --delete '[:alnum:]_')"
+          --complement --delete '[:alnum:]_')"
 
         if [[ ${#CHARACTER} -eq 1 ]]
         then
