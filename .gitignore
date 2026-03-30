@@ -92,6 +92,7 @@
 .thunderbird
 .tig_history
 .vagrant.d
+.var
 .vim
 .viminfo
 .xscreensaver
