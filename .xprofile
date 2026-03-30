@@ -15,4 +15,6 @@ xscreensaver -no-splash &
 redshift -x
 redshift -P -l 51.7:39.2 &
 
+snixembed &
+
 export NO_AT_BRIDGE=1
