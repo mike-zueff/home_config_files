@@ -1,15 +1,15 @@
 URxvt*background: black
-URxvt*boldFont: xft:Hack-12:bold
-URxvt*boldItalicFont: xft:Hack-12:bold:italic
+URxvt*boldFont: xft:Hack Nerd Font Mono:style=Bold:size=12
+URxvt*boldItalicFont: xft:Hack Nerd Font Mono:style=Bold Italic:size=12
 URxvt*borderColor: #555555
 URxvt*color12: #aa55aa
 URxvt*color4: #aa00ff
 URxvt*externalBorder: 0
-URxvt*font: xft:Hack-12
+URxvt*font: xft:Hack Nerd Font Mono:size=12,xft:Symbols Nerd Font Mono:size=12
 URxvt*foreground: white
 URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/terminal-app-symbolic.svg
 URxvt*internalBorder: 1
-URxvt*italicFont: xft:Hack-12:italic
+URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:size=12
 URxvt*letterSpace: -1
 URxvt*perl-ext-common: default,confirm-paste,searchable-scrollback<A-s>,selection-to-clipboard
 URxvt*saveLines: 999999
