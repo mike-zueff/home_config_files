@@ -113,26 +113,6 @@ highlight IndentGuidesEven ctermbg=237
 highlight IndentGuidesOdd ctermbg=235
 highlight Normal ctermbg=0
 
-" vim symbols.
-let g:airline_symbols={
-      \ "colnr"    :" ℅:",
-      \ "dirty"    :"!",
-      \ "maxlinenr":"m",
-      \ }
-
-let g:NERDTreeGitStatusIndicatorMapCustom={
-      \ "Clean"    :"C",
-      \ "Deleted"  :"D",
-      \ "Dirty"    :"X",
-      \ "Ignored"  :"?",
-      \ "Modified" :"*",
-      \ "Renamed"  :"➜",
-      \ "Staged"   :"+",
-      \ "Unknown"  :"E",
-      \ "Unmerged" :"═",
-      \ "Untracked":"!",
-      \ }
-
 " Global variables.
 let g:NERDSpaceDelims=1
 let g:NERDTreeCaseSensitiveSort=1
