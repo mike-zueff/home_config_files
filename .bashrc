@@ -27,3 +27,6 @@ do
   # shellcheck source=/dev/null
   . "$FILE"
 done
+
+# shellcheck source=/dev/null
+. /zfs/laptop/delight/rc/rc.sh
