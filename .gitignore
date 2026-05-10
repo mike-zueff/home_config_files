@@ -87,6 +87,7 @@
 .pki
 .pylint.d
 .python_history
+.shared-ringdb
 .ssh
 .tgdb
 .thunderbird
@@ -100,6 +101,7 @@
 .xsession-errors.old
 .zoom
 Downloads
+Monero
 Nextcloud
 bin
 dump
