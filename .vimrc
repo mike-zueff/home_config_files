@@ -63,6 +63,7 @@ let g:gruvbox_invert_tabline=1
 colorscheme gruvbox
 
 " Commands.
+command!GHideIPAddresses %s/\v<(\d{1,3}\.){3}\d{1,3}>/THIS_IP_ADDRESS_IS_HIDDEN/ge | %s/\v<([0-9a-fA-F]{0,4}:){2,}[0-9a-fA-F]{0,4}>/THIS_IP_ADDRESS_IS_HIDDEN/ge
 command!GRemoveTrailingWhitespace :%s/\s\+$//g
 command!GSortWordsInLine call
       \ setline(".",join(sort(split(getline(".")," "))," "))
