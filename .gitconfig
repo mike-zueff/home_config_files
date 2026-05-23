@@ -8,3 +8,8 @@
 	email = mike.zueff@gmail.com
 	name = Mike Zueff
 	signingkey = 8D224D1B65041BF7
+[http]
+	version = HTTP/1.1
+	postBuffer = 524288000
+[core]
+	compression = 0
