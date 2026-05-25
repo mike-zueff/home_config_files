@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'fatih/vim-go'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
@@ -138,7 +139,14 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_go_checkers = []
 let g:syntastic_javascript_checkers=["eslint","jshint"]
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["go"]
+    \ }
+
 let g:syntastic_python_flake8_exec="python3 /usr/bin/flake8"
 let g:syntastic_python_pylint_exec="python3 /usr/bin/pylint"
 let g:syntastic_python_python_exec="python3"
