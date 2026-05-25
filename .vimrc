@@ -156,6 +156,11 @@ let g:tagbar_indent=0
 let g:winresizer_horiz_resize=1
 let g:winresizer_vert_resize=1
 let g:ycm_complete_in_comments=1
+
+let g:ycm_filetype_specific_completion_to_disable = {
+    \ 'go': 1
+    \ }
+
 let g:ycm_global_ycm_extra_conf=
       \ "~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_seed_identifiers_with_syntax=1
