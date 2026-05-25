@@ -8,13 +8,13 @@ if empty(glob("~/.vim"))
 endif
 
 call plug#begin()
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --cs-completer --go-completer --java-completer --rust-completer --ts-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --cs-completer --java-completer --rust-completer --ts-completer' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
