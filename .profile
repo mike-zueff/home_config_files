@@ -1,1 +1,1 @@
-PATH=$PATH:~/bin:~/bin/nekoray:~/.cargo/bin
+PATH=$PATH:~/bin:~/.cargo/bin

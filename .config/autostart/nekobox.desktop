@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=nekobox
-Exec=/home/mansur/bin/nekoray/nekobox -tray
-Terminal=false
-Categories=Network
-Type=Application
-StartupNotify=false
-X-GNOME-Autostart-enabled=true

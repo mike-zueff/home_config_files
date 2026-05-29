@@ -42,6 +42,7 @@
 .config/libreoffice
 .config/mc
 .config/menus
+.config/mihomo
 .config/mimeapps.list
 .config/nautilus/search-metadata
 .config/neofetch/config.conf
