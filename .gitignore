@@ -57,6 +57,7 @@
 .config/qt5ct
 .config/qt6ct
 .config/rc_files/credentials.sh
+.config/rclone
 .config/remmina
 .config/smplayer
 .config/sqlitebrowser
