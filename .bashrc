@@ -30,3 +30,6 @@ done
 
 # shellcheck source=/dev/null
 . /zfs/laptop/delight/rc/rc.sh
+
+alias customized_qt6ct="env QT_QPA_PLATFORMTHEME=qt6ct /usr/bin/qt6ct"
+alias customized_virtualbox="env QT_STYLE_OVERRIDE=qt6ct-style /usr/bin/VirtualBox"
