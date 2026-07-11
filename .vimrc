@@ -188,6 +188,7 @@ xmap<cr> <plug>(EasyAlign)
 
 " Enabled options.
 set belloff=all
+set clipboard=unnamed,unnamedplus
 set colorcolumn=81
 set completeopt-=preview
 set confirm
