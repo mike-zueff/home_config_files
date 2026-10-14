@@ -10,8 +10,9 @@ URxvt*foreground: white
 URxvt*iconFile: /usr/share/icons/Yaru/scalable/apps/terminal-app-symbolic.svg
 URxvt*internalBorder: 1
 URxvt*italicFont: xft:Hack Nerd Font Mono:style=Italic:size=12
+URxvt*keysym.Shift-Insert: eval:paste_clipboard
 URxvt*letterSpace: -1
-URxvt*perl-ext-common: default,confirm-paste,searchable-scrollback<A-s>,selection-to-clipboard
+URxvt*perl-ext-common: default,confirm-paste,searchable-scrollback<A-s>
 URxvt*saveLines: 999999
 URxvt*scrollBar: false
 URxvt*url-launcher: /usr/bin/xdg-open
