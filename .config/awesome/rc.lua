@@ -606,4 +606,15 @@ client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
 
+awful.spawn.with_shell(
+    "dbus-update-activation-environment --systemd DISPLAY XAUTHORITY && " ..
+    "systemctl --user start awesome-session.target"
+)
+
+awesome.connect_signal("exit", function(reason_restart)
+    if not reason_restart then
+        os.execute("systemctl --user stop awesome-session.target")
+    end
+end)
+
 dofile(awful.util.getdir("config") .. "stunning.lua")
