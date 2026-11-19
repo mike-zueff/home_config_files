@@ -607,8 +607,8 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 awful.spawn.with_shell(
-    "dbus-update-activation-environment --systemd DISPLAY XAUTHORITY && " ..
-    "systemctl --user start awesome-session.target"
+    "XDG_CURRENT_DESKTOP=awesome dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_CURRENT_DESKTOP && " ..
+    "systemctl --user restart xdg-desktop-portal.service awesome-session.target"
 )
 
 awesome.connect_signal("exit", function(reason_restart)
